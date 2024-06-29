@@ -17,12 +17,12 @@
         }
         .container {
             display: flex;
-            width: 80%;
+            flex-direction: column;
+            width: 90%;
             margin: 20px auto;
         }
         .left-column, .right-column {
-            flex: 1;
-            margin: 10px;
+            margin: 10px 0;
         }
         .left-column {
             display: flex;
@@ -31,13 +31,13 @@
             justify-content: center;
         }
         .left-column img {
-            width: 220px;
-            height: 220px;
-            border-radius: 90%;
+            width: 100%;
+            max-width: 220px;
+            height: auto;
+            border-radius: 50%;
         }
         .left-column p {
-            width: 100%;
-            font-size: xx-large;
+            font-size: 1.5em;
             font-weight: bolder;
             text-align: center;
         }
@@ -58,18 +58,32 @@
             background-color: #d8e7f2;
             color: #1470AF;
             padding: 20px;
+            border-radius: 10px;
         }
         .right-column h1 {
-            font-size: xx-large;
+            font-size: 2em;
             font-weight: bolder;
+            margin-bottom: 10px;
         }
         .right-column p {
-            font-size: x-large;
+            font-size: 1em;
             font-weight: lighter;
         }
-        .mypic{
+        .mypic {
             margin-top: 0px;
             margin-bottom: 20px;
+        }
+        @media (min-width: 768px) {
+            .container {
+                flex-direction: row;
+            }
+            .left-column, .right-column {
+                margin: 10px;
+                flex: 1;
+            }
+            .left-column p, .right-column p {
+                font-size: larger;
+            }
         }
     </style>
 </head>
@@ -82,7 +96,7 @@
         <div class="social-links">
             <a href="https://github.com/muhammad-tahir0312"><img src="images/github.png" alt="GitHub Logo"></a>
             <a href="https://www.linkedin.com/in/muhammad-tahir-0ab1291b2/"><img src="images/linkedin-logo.png" alt="LinkedIn Logo"></a>
-            <a href="#"><img src="images/instagram.png" alt="Instagram Logo"></a>
+            <a href="https://www.instagram.com/khani.zidle?igsh=dG5tc3FrZXBpczY5"><img src="images/instagram.png" alt="Instagram Logo"></a>
             <a href="mailto:mtahirkhanyousufzai@gmail.com"><img src="images/gmail.png" alt="Gmail Logo"></a>
         </div>
     </div>

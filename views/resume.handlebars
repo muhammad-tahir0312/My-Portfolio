@@ -34,31 +34,31 @@
 
         .accordion-body {
             background-color: #d8e7f2;
-            font-size: xx-large;
+            font-size: large;
             color: #1470AF;
             padding: 20px;
         }
 
         .accordion-item {
             border-bottom: 2px solid white;
-            font-size: xx-large;
+            font-size: large;
         }
 
         .container {
             display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
+            flex-direction: column;
+            align-items: center;
             padding: 20px;
         }
 
         .left-column {
-            position: fixed;
-            width: 40%;
+            width: 100%;
+            text-align: center;
+            margin-bottom: 20px;
         }
 
         .right-column {
-            margin-left: 45%;
-            width: 50%;
+            width: 100%;
         }
 
         .skills-bar .bar {
@@ -206,6 +206,33 @@
         .progress-line .bash::after {
             content: "95%";
         }
+
+        @media (min-width: 768px) {
+            .container {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: flex-start;
+            }
+
+            .left-column {
+                position: fixed;
+                width: 40%;
+                text-align: left;
+            }
+
+            .right-column {
+                margin-left: 45%;
+                width: 50%;
+            }
+
+            .accordion-body {
+                font-size: xx-large;
+            }
+
+            .accordion-item {
+                font-size: xx-large;
+            }
+        }
     </style>
 </head>
 
@@ -213,7 +240,7 @@
     <div class="container">
         <div class="left-column">
             <h1 style="font-size: 60px; font-weight: bolder;">My Resume</h1>
-            <a href="https://drive.google.com/file/d/19Jvfrqddhep1G2y3On6UrQDm097vc1tJ/view?usp=drive_link" class="btn btn-custom">PDF of current resume</a>
+            <a href="https://drive.google.com/file/d/19Jvfrqddhep1G2y3On6UrQDm097vc1tJ/view?usp=drive_link" class="btn-custom">PDF of current resume</a>
         </div>
         <div class="right-column">
             <div class="accordion" id="accordionExample">
@@ -225,25 +252,12 @@
                     </h2>
                     <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                            <strong>Bachelor's in computer science</strong><br>
+                            <strong>Bachelor's in Computer Science</strong><br>
                             National University of Computer and Emerging Sciences (FAST)<br>
                             08/2021 - Present
                         </div>
                     </div>
                 </div>
-                {{!-- <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                            Work Experience
-                        </button>
-                    </h2>
-                    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                            <strong>Details about work experience go here.</strong>
-                            Additional information can be added as needed.
-                        </div>
-                    </div>
-                </div> --}}
                 <div class="accordion-item">
                     <h2 class="accordion-header">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
@@ -285,7 +299,7 @@
                                     <div class="progress-line">
                                         <span class="c"></span>
                                     </div>
-                                </div>                               
+                                </div>
                                 <div class="bar">
                                     <div class="info">
                                         <span>BOOTSTRAP</span>
