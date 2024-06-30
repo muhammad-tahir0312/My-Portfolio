@@ -90,6 +90,27 @@
       .project-card:hover .project-card-image {
           filter: none; 
       }
+
+      /* Mobile styles */
+      @media (max-width: 768px) {
+          .project-card:active {
+              transform: translateY(-5px);
+              box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+          }
+
+          .project-card:active::before {
+              opacity: 1;
+          }
+
+          .project-card:active .project-card-content {
+              opacity: 1;
+              color: #fff;
+          }
+
+          .project-card:active .project-card-image {
+              filter: none;
+          }
+      }
     </style>
   </head>
   <body style="background-color: #1470AF; color: white">

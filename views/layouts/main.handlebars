@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Muhammad's Portfolio</title>
+    <link rel="icon" type="image/icon" href="images/icon2.png">
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -14,15 +15,34 @@
       .navbar-custom {
         margin-top: 40px;
         margin-bottom: 20px;
-        padding-left: 60px; /* Adjust this value as needed */
-        padding-right: 70px; /* Adjust this value as needed */
+        padding-left: 15px; /* Adjust this value as needed */
+        padding-right: 15px; /* Adjust this value as needed */
+      }
+
+      @media (min-width: 768px) {
+        .navbar-custom {
+          padding-left: 60px;
+          padding-right: 70px;
+        }
+      }
+
+      .navbar-collapse {
+        justify-content: flex-end;
+      }
+
+      .navbar-toggler {
+        margin-left: auto;
+      }
+
+      .navbar-collapse {
+        text-align: right;
       }
     </style>
   </head>
   <body style="background-color: #1470AF; color: white">
-    <nav class="navbar navbar-expand-lg w-100 navbar-custom">
+    <nav class="navbar navbar-expand-lg navbar-light w-100 navbar-custom">
       <div class="container-fluid"> 
-        <a class="navbar-brand" style="color: white; font-weight: bold; font-size:x-large" href="/">MUHAMMAD TAHIR</a>
+        <a class="navbar-brand" style="color: white; font-weight: bold; font-size: x-large" href="/">MUHAMMAD TAHIR</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -37,13 +57,13 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" style="color: white; font-weight: bold; font-size:larger" href="/resume">RESUME</a>
+              <a class="nav-link" style="color: white; font-weight: bold; font-size: larger" href="/resume">RESUME</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" style="color: white; font-weight: bold; font-size:larger" href="/project">PROJECTS</a>
+              <a class="nav-link" style="color: white; font-weight: bold; font-size: larger" href="/project">PROJECTS</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" style="color: white; font-weight: bold; font-size:larger" href="/certificate">CERTIFICATIONS</a>
+              <a class="nav-link" style="color: white; font-weight: bold; font-size: larger" href="/certificate">CERTIFICATIONS</a>
             </li>
           </ul>
         </div>
