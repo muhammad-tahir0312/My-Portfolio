@@ -27,7 +27,7 @@ To run this project locally, follow these steps:
 
 1. Clone the repository:
     ```bash
-    git clone [https://github.com/muhammad-tahir0312/portfolio.git](https://github.com/muhammad-tahir0312/My-Portfolio)
+    git clone https://github.com/muhammad-tahir0312/portfolio.git
     ```
 2. Open the `index.html` file in your preferred web browser.
 
