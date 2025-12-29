@@ -1,113 +1,296 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            margin: 0;
-            padding: 0;
-            background-color: #111F44;
-            color: #f8f8f8;
-            font-family: 'Arial', sans-serif;
-        }
-        .container {
-            display: flex;
-            flex-direction: column;
-            width: 90%;
-            margin: 20px auto;
-        }
-        .left-column, .right-column {
-            margin: 10px 0;
-        }
-        .left-column {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-        .left-column img {
-            width: 100%;
-            max-width: 220px;
-            height: auto;
-            border-radius: 50%;
-        }
-        .left-column p {
-            font-size: 1.5em;
-            font-weight: bolder;
-            text-align: center;
-        }
-        .social-links {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-        }
-        .social-links a {
-            margin: 0 10px;
-            color: #d8e7f2;
-        }
-        .social-links img {
-            width: 30px;
-            height: 30px;
-        }
-        .right-column {
-            background-color: #d8e7f2;
-            color: #1470AF;
-            padding: 20px;
-            border-radius: 10px;
-        }
-        .right-column h1 {
-            font-size: 2em;
-            font-weight: bolder;
-            margin-bottom: 10px;
-        }
-        .right-column p {
-            font-size: 1em;
-            font-weight: lighter;
-        }
-        .mypic {
-            margin-top: 0px;
-            margin-bottom: 20px;
-            border-radius: 100%;
-        }
-        @media (min-width: 768px) {
-            .container {
-                flex-direction: row;
-            }
-            .left-column, .right-column {
-                margin: 10px;
-                flex: 1;
-            }
-            .left-column p, .right-column p {
-                font-size: larger;
-            }
-        }
-    </style>
-</head>
-<body>
+<style>
+    .home-shell {
+        position: relative;
+        overflow: hidden;
+    }
 
-<div class="container">
-    <div class="left-column">
-        <img class="mypic" src="images/mypic.png" alt="Profile Picture">
-        <p>Undergraduate student at National University of Computer & Emerging Sciences pursuing a Bachelor's in Computer Science with career interests in Artificial Intelligence, Web Development, and Machine Learning.</p>
-        <div class="social-links">
-            <a href="https://github.com/muhammad-tahir0312" target="_blank"><img src="images/github.png" alt="GitHub Logo"></a>
-            <a href="https://www.linkedin.com/in/muhammad-tahir-0ab1291b2/" target="_blank"><img src="images/linkedin-logo.png" alt="LinkedIn Logo"></a>
-            <a href="https://www.instagram.com/muhammadtahir0307?igsh=dG5tc3FrZXBpczY5" target="_blank"><img src="images/instagram.png" alt="Instagram Logo"></a>
-            <a href="mailto:mtahirkhanyousufzai@gmail.com" target="_blank"><img src="images/gmail.png" alt="Gmail Logo"></a>
+    .home-shell::before,
+    .home-shell::after {
+        content: "";
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(70px);
+        opacity: 0.45;
+        z-index: 0;
+    }
+
+    .home-shell::before {
+        width: 340px;
+        height: 340px;
+        background: #1e9bff;
+        top: -140px;
+        left: -120px;
+    }
+
+    .home-shell::after {
+        width: 380px;
+        height: 380px;
+        background: #7ce7ff;
+        bottom: -200px;
+        right: -140px;
+    }
+
+    .hero-card {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        gap: 24px;
+        grid-template-columns: 1fr;
+        background: linear-gradient(135deg, rgba(19, 47, 99, 0.85), rgba(16, 37, 81, 0.9));
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        padding: 30px;
+        box-shadow: var(--shadow);
+        backdrop-filter: blur(8px);
+    }
+
+    @media (min-width: 992px) {
+        .hero-card {
+            grid-template-columns: 5fr 4fr;
+            padding: 38px;
+        }
+    }
+
+    .avatar-wrap {
+        width: 190px;
+        height: 190px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #1e9bff, #7ce7ff);
+        padding: 6px;
+        margin: 0 auto 16px auto;
+        box-shadow: 0 16px 32px rgba(0, 0, 0, 0.35);
+    }
+
+    .avatar-wrap img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+        display: block;
+    }
+
+    .tag-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        justify-content: center;
+        margin-bottom: 12px;
+    }
+
+    .tag {
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid var(--border);
+        color: var(--muted);
+        padding: 8px 12px;
+        border-radius: 999px;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.2px;
+    }
+
+    .hero-title {
+        font-size: clamp(30px, 5vw, 44px);
+        font-weight: 800;
+        line-height: 1.15;
+        margin: 8px 0 12px 0;
+        text-align: center;
+    }
+
+    .hero-lead {
+        font-size: 17px;
+        line-height: 1.6;
+        color: var(--muted);
+        text-align: center;
+        margin-bottom: 18px;
+    }
+
+    .cta-row {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-bottom: 20px;
+    }
+
+    .btn-pill {
+        border-radius: 999px;
+        padding: 11px 18px;
+        font-weight: 700;
+        border: 1px solid rgba(255, 255, 255, 0.28);
+        color: #0f2b58;
+        background: #f8f8f8;
+        text-decoration: none;
+    }
+
+    .btn-pill.secondary {
+        background: transparent;
+        color: var(--text);
+        border-color: rgba(255, 255, 255, 0.18);
+    }
+
+    .contact-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 12px;
+        margin-bottom: 8px;
+    }
+
+    .contact-card {
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 12px 14px;
+        text-align: center;
+        color: #e7eef5;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 14px;
+        word-break: break-word;
+        overflow-wrap: anywhere;
+    }
+
+    .contact-card:hover {
+        background: rgba(255, 255, 255, 0.14);
+    }
+
+    .hero-right {
+        display: grid;
+        gap: 16px;
+    }
+
+    .panel {
+        background: #f3f6fb;
+        color: #0f2b58;
+        border-radius: var(--radius);
+        padding: 20px;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.18);
+    }
+
+    .panel h3 {
+        margin-top: 0;
+        margin-bottom: 10px;
+        font-weight: 800;
+        font-size: 18px;
+    }
+
+    .panel ul {
+        padding-left: 18px;
+        margin: 0;
+    }
+
+    .panel li {
+        margin-bottom: 8px;
+        font-size: 15px;
+        line-height: 1.5;
+    }
+
+    .stat-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 12px;
+    }
+
+    .stat-card {
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        color: var(--text);
+        border-radius: 14px;
+        padding: 14px 16px;
+        display: grid;
+        gap: 6px;
+    }
+
+    .stat-label {
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: 0.4px;
+        color: var(--muted);
+        font-weight: 800;
+    }
+
+    .stat-value {
+        font-size: 16px;
+        font-weight: 800;
+    }
+
+    @media (min-width: 992px) {
+        .hero-title,
+        .hero-lead,
+        .tag-row,
+        .cta-row {
+            text-align: left;
+            justify-content: flex-start;
+        }
+
+        .avatar-wrap {
+            margin-left: 0;
+        }
+    }
+</style>
+
+<section class="page-shell home-shell">
+    <div class="hero-card">
+        <div>
+            <div class="avatar-wrap">
+                <img src="images/mypic.png" alt="Profile Picture">
+            </div>
+            <div class="tag-row">
+                <span class="tag">Associate SDE @ Ikhwatech</span>
+                <span class="tag">Karachi, Pakistan</span>
+                <span class="tag">BS (CS) FAST · Jun 2025 · CGPA 3.45</span>
+            </div>
+            <h1 class="hero-title">Muhammad Tahir</h1>
+            <p class="hero-lead">I build production-ready web and mobile apps
+                with React, React Native, Node/Express, and Spring Boot. I care
+                about resilient backends, polished UI engineering, and using
+                data and AI/ML to ship secure, scalable experiences.</p>
+            <div class="cta-row">
+                <a class="btn-pill" href="/resume">View Resume</a>
+                <a class="btn-pill secondary" href="/project">Projects</a>
+            </div>
+            <div class="contact-grid">
+                <a class="contact-card"
+                    href="mailto:mtahirkhanyousufzai@gmail.com">mtahirkhanyousufzai@gmail.com</a>
+                <a class="contact-card" href="tel:+923079454287">+92 307
+                    9454287</a>
+            </div>
+            <div class="contact-grid">
+                <a class="contact-card"
+                    href="https://github.com/muhammad-tahir0312"
+                    target="_blank">GitHub</a>
+                <a class="contact-card"
+                    href="https://www.linkedin.com/in/muhammad-tahir-0ab1291b2/"
+                    target="_blank">LinkedIn</a>
+            </div>
+        </div>
+
+        <div class="hero-right">
+            <div class="panel">
+                <h3>What I do</h3>
+                <ul>
+                    <li>Ship secure, scalable features across React/React Native
+                        frontends and Spring Boot or Node/Express backends.</li>
+                    <li>Automate quality with JUnit 5 and Cypress, and tune
+                        performance for production workloads.</li>
+                    <li>Apply data- and AI-driven thinking to improve product
+                        reliability and user experience.</li>
+                </ul>
+            </div>
+            <div class="stat-grid">
+                <div class="stat-card">
+                    <div class="stat-label">Current</div>
+                    <div class="stat-value">Associate SDE, Ikhwatech</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Focus</div>
+                    <div class="stat-value">Full-stack · AI/ML · Data</div>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Tooling</div>
+                <div class="stat-value">React, React Native, Java, Spring Boot, Node/Express,
+                    AWS (EC2, S3, CI/CD pipeline), Docker, Python, FAST API</div>
+            </div>
         </div>
     </div>
-    <div class="right-column">
-        <h1>Intro</h1>
-        <p>I'm Muhammad Tahir, a Computer Science enthusiast based in Karachi, Pakistan. Growing up in this bustling city, where the aroma of biryani mingles with the sound of rickshaws, has shaped my perspective. The vibrant threads of culture, family bonds, and cricket matches have woven themselves into my experiences.
-Currently pursuing my Bachelor's degree in Computer Science at FAST (National University of Computer and Emerging Sciences), I've explored a diverse range of programming languages. From the elegance of C and C++ to the dynamic world of React.js and Node.js, I've tinkered with code to build web applications. HTML/CSS is my canvas, and Python is my Swiss Army knife— I use it for everything from data analysis to exploring AI concepts.
-Beyond syntax, I'm captivated by Artificial Intelligence and Machine Learning. The idea of teaching machines to learn and adapt fascinates me. Whether it's optimizing an algorithm or crafting an intuitive user interface, I thrive on turning ideas into reality.</p>
-    </div>
-</div>
-
-</body>
-</html>
+</section>

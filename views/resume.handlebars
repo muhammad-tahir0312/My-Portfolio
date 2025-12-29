@@ -1,395 +1,321 @@
-<!DOCTYPE html>
-<html lang="en">
+<style>
+    .resume-shell {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            background-color: #1470AF;
-            color: #d8e7f2;
-            margin: 0;
+    @media (min-width: 992px) {
+        .resume-shell {
+            grid-template-columns: 380px 1fr;
+            align-items: start;
+            gap: 32px;
         }
+    }
 
-        .btn-custom {
-            background-color: #1470AF;
-            font-size: x-large;
-            color: #d8e7f2;
-            font-weight: bold;
-            text-decoration: underline;
-            padding-left: 20px;
-            display: inline-block;
-            margin-top: 20px;
-            font-family: 'Arial', sans-serif;
+    .resume-left {
+        position: static;
+        top: auto;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        padding: 24px;
+        box-shadow: var(--shadow);
+    }
+
+    @media (min-width: 992px) {
+        .resume-left {
+            position: sticky;
+            top: 90px;
         }
+    }
 
-        .accordion-button {
-            background-color: #1470AF;
-            font-size: xx-large;
-            color: #d8e7f2;
-            border: none;
-            font-weight: bold;
-            cursor: pointer;
-            font-family: 'Arial', sans-serif;
-        }
+    .resume-title {
+        font-size: 34px;
+        font-weight: 800;
+        margin: 0 0 10px;
+    }
 
-        .accordion-body {
-            background-color: #d8e7f2;
-            font-size: large;
-            color: #1470AF;
-            padding: 20px;
-            font-family: 'Arial', sans-serif;
-        }
+    .resume-sub {
+        color: var(--muted);
+        margin-bottom: 16px;
+        line-height: 1.5;
+    }
 
-        .accordion-item {
-            border-bottom: 2px solid white;
-            font-size: large;
-            font-family: 'Arial', sans-serif;
-        }
+    .resume-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
 
-        .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px;
-            font-family: 'Arial', sans-serif;
-        }
+    .resume-btn {
+        padding: 10px 14px;
+        border-radius: 12px;
+        font-weight: 700;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        text-decoration: none;
+        color: #0f2b58;
+        background: #f8f8f8;
+    }
 
-        .left-column {
-            width: 100%;
-            text-align: center;
-            margin-bottom: 20px;
-        }
+    .resume-btn.secondary {
+        background: transparent;
+        color: var(--text);
+    }
 
-        .right-column {
-            width: 100%;
-        }
+    .pill-stack {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 14px;
+    }
 
-        .skills-bar .bar {
-            margin: 25px 0;
-        }
+    .pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 8px 12px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid var(--border);
+        color: var(--muted);
+        font-weight: 700;
+        font-size: 13px;
+    }
 
-        .skills-bar .bar .info span {
-            font-size: 1rem;
-            font-weight: 700;
-        }
+    .pill-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
 
-        .skills-bar .bar .info {
-            margin-bottom: 8px;
-            color: #07374a;
-        }
+    .resume-right { display: grid; gap: 16px; }
 
-        .skills-bar .bar .progress-line {
-            position: relative;
-            height: 10px;
-            width: 100%;
-            background: #f0f0f0;
-            border-radius: 10px;
-            transform: scaleX(0);
-            transform-origin: left;
-            animation: animate 1s cubic-bezier(1, 0, 0.5, 1) forwards;
-        }
+    .card-block {
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 18px 18px 14px 18px;
+        box-shadow: var(--shadow);
+    }
 
-        .bar .progress-line span {
-            position: absolute;
-            background: #25b79f;
-            height: 100%;
-            border-radius: 10px;
-            transform: scaleX(0);
-            transform-origin: left;
-            animation: animate 1s 1s cubic-bezier(1, 0, 0.5, 1) forwards;
-        }
+    .card-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+    }
 
-        @keyframes animate {
-            100% {
-                transform: scaleX(1);
-            }
-        }
+    .card-title {
+        font-size: 18px;
+        font-weight: 800;
+        margin: 0;
+    }
 
-        .progress-line .html {
-            width: 100%;
-        }
+    .card-subtitle {
+        color: var(--muted);
+        font-size: 14px;
+        margin: 0 0 8px 0;
+    }
 
-        .progress-line .bootstrap {
-            width: 100%;
-        }
+    .item-list { padding-left: 18px; margin: 0; }
+    .item-list li { margin-bottom: 6px; line-height: 1.5; }
 
-        .progress-line .javascript {
-            width: 80%;
-        }
+    .grid-2 { display: grid; grid-template-columns: 1fr; gap: 12px; }
+    @media (min-width: 768px) { .grid-2 { grid-template-columns: repeat(2, 1fr); } }
+</style>
 
-        .progress-line .c {
-            width: 100%;
-        }
-
-        .progress-line .python {
-            width: 90%;
-        }
-
-        .progress-line .sql {
-            width: 100%;
-        }
-
-        .progress-line .react {
-            width: 75%;
-        }
-
-        .progress-line .node {
-            width: 85%;
-        }
-
-        .progress-line .express {
-            width: 90%;
-        }
-
-        .progress-line .bash {
-            width: 95%;
-        }
-
-        .bar .progress-line span::before {
-            position: absolute;
-            content: "";
-            height: 0;
-            right: 0;
-            top: -14px;
-            width: 0;
-            border: 7px solid transparent;
-            border-bottom-width: 0px;
-            border-right-width: 0px;
-            border-top-color: #f0f0f0;
-        }
-
-        .bar .progress-line span::after {
-            position: absolute;
-            right: 0;
-            top: -28px;
-            color: #f0f0f0;
-            font-size: 12px;
-            font-weight: 700;
-            background: #07374a;
-            padding: 1px 8px;
-            border-radius: 3px;
-        }
-
-        .progress-line .html::after {
-            content: "100%";
-        }
-
-        .progress-line .bootstrap::after {
-            content: "100%";
-        }
-
-        .progress-line .javascript::after {
-            content: "82%";
-        }
-
-        .progress-line .c::after {
-            content: "100%";
-        }
-
-        .progress-line .python::after {
-            content: "90%";
-        }
-
-        .progress-line .sql::after {
-            content: "100%";
-        }
-
-        .progress-line .react::after {
-            content: "85%";
-        }
-
-        .progress-line .node::after {
-            content: "85%";
-        }
-
-        .progress-line .express::after {
-            content: "90%";
-        }
-
-        .progress-line .bash::after {
-            content: "95%";
-        }
-
-        @media (min-width: 768px) {
-            .container {
-                flex-direction: row;
-                justify-content: space-between;
-                align-items: flex-start;
-            }
-
-            .left-column {
-                position: fixed;
-                width: 40%;
-                text-align: left;
-            }
-
-            .right-column {
-                margin-left: 45%;
-                width: 50%;
-            }
-
-            .accordion-body {
-                font-size: xx-large;
-            }
-
-            .accordion-item {
-                font-size: xx-large;
-            }
-        }
-    </style>
-</head>
-
-<body>
-    <div class="container">
-        <div class="left-column">
-            <h1 style="font-size: 60px; font-weight: bolder;">My Resume</h1>
-            <a href="https://drive.google.com/file/d/1RslECBjoN_dTN8-gJ0kaV89SOKhHYu3_/view?usp=sharing" target="_blank" class="btn-custom">PDF of current resume</a>
+<section class="page-shell resume-shell">
+    <div class="resume-left">
+        <h1 class="resume-title">Resume</h1>
+        <p class="resume-sub">Associate SDE focused on production-grade web and
+            mobile apps. I ship resilient backends, polished UIs, and
+            data/AI-driven features.</p>
+        <div class="resume-actions">
+            <a class="resume-btn"
+                href="https://drive.google.com/file/d/1SslPLctytPuhOb_GH-zr9gouzaEE3QEd/view?usp=drive_link"
+                target="_blank">PDF Resume</a>
+            <a class="resume-btn secondary"
+                href="mailto:mtahirkhanyousufzai@gmail.com">Email</a>
+            <a class="resume-btn secondary" href="tel:+923079454287">Call</a>
         </div>
-        <div class="right-column">
-            <div class="accordion" id="accordionExample">
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                            Education
-                        </button>
-                    </h2>
-                    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                            <strong>Bachelor's in Computer Science</strong><br>
-                            National University of Computer and Emerging Sciences (FAST)<br>
-                            08/2021 - Present
-                        </div>
+        <div class="pill-stack">
+            <span class="pill"><span class="pill-dot"></span>Karachi,
+                Pakistan</span>
+            <span class="pill"><span class="pill-dot"></span>BS (CS) FAST | Jun
+                2025 | CGPA 3.45</span>
+        </div>
+    </div>
+
+    <div class="resume-right">
+        <div class="card-block">
+            <div class="card-header">
+                <h3 class="card-title">Education</h3>
+            </div>
+            <div class="card-subtitle">BS (CS) — National University of Computer
+                and Emerging Sciences (FAST), Karachi</div>
+            <div class="card-subtitle mx-2">· Aug 2021 – Jun 2025</div>
+            <div class="card-subtitle mx-2">· CGPA 3.45</div>
+            <div class="pill-stack">
+                <span class="pill">Information Retrieval</span>
+                <span class="pill">DevOps</span>
+                <span class="pill">Data Science</span>
+                <span class="pill">Database Systems</span>
+                <span class="pill">Software Engineering</span>
+                <span class="pill">Software Engineering Economics</span>
+                <span class="pill">Software For Mobile Devices (Flutter)</span>
+                <span class="pill">OOP & Data Structures</span>
+            </div>
+        </div>
+
+        <div class="card-block">
+            <div class="card-header">
+                <h3 class="card-title">Experience</h3>
+            </div>
+            <div class="card-subtitle">Ikhwatech — Associate Software
+                Development Engineer · Jan 2025 – Present</div>
+            <ul class="item-list">
+                <li>Develop production apps for aviation clients with React,
+                    React Native, and Spring Boot.</li>
+                <li>Contribute across the stack: UI polish, backend API
+                    integration, database management, and automated tests with
+                    JUnit 5 and Cypress.</li>
+                <li>Optimize for scalability, security, and performance using
+                    engineering best practices.</li>
+            </ul>
+            <div class="card-subtitle" style="margin-top:12px;">Bloomrix —
+                Software Engineering Intern · Aug 2024 – Nov 2024</div>
+            <ul class="item-list">
+                <li>Delivered full-stack features in React, Node.js, and PHP
+                    within Agile sprints.</li>
+                <li>Assisted with project management, team ceremonies, and
+                    production-quality deliveries.</li>
+                <li>Participated in weekly trainings on best practices and
+                    advanced technical skills.</li>
+            </ul>
+        </div>
+
+        <div class="card-block">
+            <div class="card-header">
+                <h3 class="card-title">Research & Projects</h3>
+            </div>
+            <div class="card-subtitle">Identification of Neurological Diseases
+                using Deep Learning · 2025</div>
+            <ul class="item-list">
+                <li>Built a CNN-based system to identify Alzheimer’s-associated
+                    SNPs and classify patients (75% accuracy).</li>
+                <li>Introduced a Phenotype Influence Score to select markers,
+                    outperforming XGBoost and Random Forest baselines.</li>
+                <li>Applied to ADNI dataset, highlighting APOE risk loci and
+                    surfacing novel variants for early diagnosis.</li>
+            </ul>
+            <div class="card-subtitle" style="margin-top:12px;">Online
+                Restaurant Food Ordering Website · May 2024</div>
+            <ul class="item-list">
+                <li>Built a responsive Next.js + Tailwind + TypeScript frontend
+                    with Node.js backend.</li>
+                <li>Enabled social sign-in (Google/Facebook), Stripe payments,
+                    and MongoDB-backed ordering.</li>
+                <li>Focused on intuitive navigation and low-latency checkout
+                    flows.</li>
+            </ul>
+        </div>
+
+        <div class="card-block">
+            <div class="card-header">
+                <h3 class="card-title">Skills</h3>
+            </div>
+            <div class="grid-2">
+                <div>
+                    <div class="card-subtitle">Languages & Frameworks</div>
+                    <div class="pill-stack">
+                        <span class="pill">C/C++</span>
+                        <span class="pill">Python</span>
+                        <span class="pill">JavaScript</span>
+                        <span class="pill">TypeScript</span>
+                        <span class="pill">Java</span>
+                        <span class="pill">Spring Boot</span>
+                        <span class="pill">PHP</span>
+                        <span class="pill">React</span>
+                        <span class="pill">React Native</span>
+                        <span class="pill">Node.js</span>
+                        <span class="pill">Express.js</span>
+                        <span class="pill">FastAPI</span>
                     </div>
                 </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                            Interests & Extracurriculars
-                        </button>
-                    </h2>
-                    <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                            <strong>Interest in Artificial Intelligence and Machine Learning</strong><br>
-                            I possess a profound interest in the captivating domains of Artificial Intelligence and Machine Learning, and I am ardently involved in hackathons and coding competitions to augment my problem-solving capabilities.<br><br>
-                            <strong>Sharing my expertise among individuals</strong><br>
-                            I have a keen interest in sharing my technical knowledge and skills among juniors and young enthusiasts.<br><br>
-                            <strong>Indulging in problem-solving activities and competitions</strong><br>
-                            These activities assist me in developing and improving my spatial awareness, analytical, and motor skills.
-                        </div>
+                <div>
+                    <div class="card-subtitle">Data, AI, and Parallel</div>
+                    <div class="pill-stack">
+                        <span class="pill">CUDA</span>
+                        <span class="pill">MPI</span>
+                        <span class="pill">OpenMP</span>
+                        <span class="pill">Pandas</span>
+                        <span class="pill">Numpy</span>
+                        <span class="pill">Seaborn</span>
+                        <span class="pill">Scikit-learn</span>
+                        <span class="pill">TensorFlow</span>
+                        <span class="pill">Keras</span>
                     </div>
                 </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                            Skills
-                        </button>
-                    </h2>
-                    <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                            <div class="skills-bar">
-                                <div class="bar">
-                                    <div class="info">
-                                        <span>HTML/CSS</span>
-                                    </div>
-                                    <div class="progress-line">
-                                        <span class="html"></span>
-                                    </div>
-                                </div>
-                                <div class="bar">
-                                    <div class="info">
-                                        <span>C & C++ PROGRAMMING</span>
-                                    </div>
-                                    <div class="progress-line">
-                                        <span class="c"></span>
-                                    </div>
-                                </div>
-                                <div class="bar">
-                                    <div class="info">
-                                        <span>BOOTSTRAP</span>
-                                    </div>
-                                    <div class="progress-line">
-                                        <span class="bootstrap"></span>
-                                    </div>
-                                </div>
-                                <div class="bar">
-                                    <div class="info">
-                                        <span>SQL</span>
-                                    </div>
-                                    <div class="progress-line">
-                                        <span class="sql"></span>
-                                    </div>
-                                </div>
-                                <div class="bar">
-                                    <div class="info">
-                                        <span>PYTHON</span>
-                                    </div>
-                                    <div class="progress-line">
-                                        <span class="python"></span>
-                                    </div>
-                                </div>
-                                <div class="bar">
-                                    <div class="info">
-                                        <span>EXPRESS</span>
-                                    </div>
-                                    <div class="progress-line">
-                                        <span class="express"></span>
-                                    </div>
-                                </div>
-                                <div class="bar">
-                                    <div class="info">
-                                        <span>JAVASCRIPT</span>
-                                    </div>
-                                    <div class="progress-line">
-                                        <span class="javascript"></span>
-                                    </div>
-                                </div>
-                                <div class="bar">
-                                    <div class="info">
-                                        <span>REACT</span>
-                                    </div>
-                                    <div class="progress-line">
-                                        <span class="react"></span>
-                                    </div>
-                                </div>
-                                <div class="bar">
-                                    <div class="info">
-                                        <span>NODE</span>
-                                    </div>
-                                    <div class="progress-line">
-                                        <span class="node"></span>
-                                    </div>
-                                </div>
-                                <div class="bar">
-                                    <div class="info">
-                                        <span>BASH/SHELL</span>
-                                    </div>
-                                    <div class="progress-line">
-                                        <span class="bash"></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                <div>
+                    <div class="card-subtitle" style="margin-top:12px;">Cloud &
+                        Tools</div>
+                    <div class="pill-stack">
+                        <span class="pill">AWS (EC2, S3, CI/CD)</span>
+                        <span class="pill">Docker</span>
+                        <span class="pill">Git/GitHub</span>
+                        <span class="pill">Ubuntu & Bash</span>
+                        <span class="pill">x86 Assembly</span>
                     </div>
                 </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                            Languages
-                        </button>
-                    </h2>
-                    <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                            <strong>Urdu</strong><br>
-                            Full Professional Proficiency<br><br>
-                            <strong>English</strong><br>
-                            Full Professional Proficiency<br><br>
-                        </div>
+                <div>
+                    <div class="card-subtitle" style="margin-top:12px;">Testing
+                        & Quality</div>
+                    <div class="pill-stack">
+                        <span class="pill">JUnit 5</span>
+                        <span class="pill">Cypress</span>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</body>
 
-</html>
+        <div class="card-block">
+            <div class="card-header">
+                <h3 class="card-title">Certifications & Awards</h3>
+            </div>
+            <div class="pill-stack" style="margin-bottom:12px;">
+                <span class="pill">Data Cleaning in Python — DataCamp
+                    (2024)</span>
+                <span class="pill">Docker — Kode Kloud (2024)</span>
+                <span class="pill">Project Management — Great Learning
+                    (2024)</span>
+                <span class="pill">Data Analysis with Python — Coursera
+                    (2023)</span>
+                <span class="pill">AI for Everyone — Coursera (2023)</span>
+                <span class="pill">Introduction to Python — Microsoft
+                    (2020)</span>
+            </div>
+            <div class="pill-stack">
+                <span class="pill">Rector’s List Award (Fall 2025)</span>
+                <span class="pill">Dean’s List (Fall 2023, Spring 2024, Fall
+                    2024)</span>
+            </div>
+        </div>
+
+        <div class="card-block">
+            <div class="card-header">
+                <h3 class="card-title">Interests & Soft Skills</h3>
+            </div>
+            <div class="pill-stack" style="margin-bottom:12px;">
+                <span class="pill">Software Engineering</span>
+                <span class="pill">Full-Stack Development</span>
+                <span class="pill">Artificial Intelligence & Machine
+                    Learning</span>
+                <span class="pill">Data Science & Analytics</span>
+            </div>
+            <div class="pill-stack">
+                <span class="pill">Communication & Collaboration</span>
+                <span class="pill">Critical Thinking</span>
+                <span class="pill">Problem Solving</span>
+                <span class="pill">Time Management</span>
+                <span class="pill">Multitasking</span>
+            </div>
+        </div>
+    </div>
+</section>
