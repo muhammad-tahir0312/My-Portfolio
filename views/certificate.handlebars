@@ -1,69 +1,144 @@
-<!DOCTYPE html>
-<html lang="en">
+<style>
+    .cert-hero { margin-bottom: 18px; }
+    .cert-hero h1 { margin: 0; font-size: 32px; font-weight: 800; }
+    .cert-hero p { margin: 6px 0 0 0; color: var(--muted); }
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-</head>
+    .cert-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+    }
 
-<body>
-    <div class="container my-5">
-        <div class="row justify-content-center">
-            <div class="col-12 col-md-6 col-lg-4 mb-4">
-                <div class="card h-100 mx-3">
-                    <img src="images/certificate1.png" class="card-img-top" alt="Data Analysis with Python">
-                    <div class="card-body">
-                        <h5 class="card-title">Data Analysis with Python</h5>
-                    </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">IBM</li>
-                        <li class="list-group-item">Issued July 2023</li>
-                        <li class="list-group-item">Credential ID UCZ5AJYLTWSH</li>
-                    </ul>
-                    <div class="card-body">
-                        <a href="https://coursera.org/verify/UCZ5AJYLTWSH" target="_blank" class="card-link">Show Credential</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4 mb-4">
-                <div class="card h-100 mx-3">
-                    <img src="images/certificate2.png" class="card-img-top" alt="AI For Everyone">
-                    <div class="card-body">
-                        <h5 class="card-title">AI For Everyone</h5>
-                    </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Coursera</li>
-                        <li class="list-group-item">Issued April 2020</li>
-                        <li class="list-group-item">Credential ID LUSEHBT5BWWL</li>
-                    </ul>
-                    <div class="card-body">
-                        <a href="https://coursera.org/verify/UCZ5AJYLTWSH" target="_blank" class="card-link">Show Credential</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4 mb-4">
-                <div class="card h-100 mx-3">
-                    <img src="images/certificate3.png" class="card-img-top" alt="Introduction to Programming using Python">
-                    <div class="card-body">
-                        <h5 class="card-title">Introduction to Programming using Python</h5>
-                    </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Microsoft Technology Associate</li>
-                        <li class="list-group-item">Issued July 2020</li>
-                        <li class="list-group-item">Credential ID LUSEHBT5BWWL</li>
-                    </ul>
-                    <div class="card-body">
-                        <a href="https://verify.certiport.com/mWdE-uTYE" target="_blank" class="card-link">Show Credential</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+    .cert-card {
+        background: linear-gradient(145deg, rgba(19, 47, 99, 0.9), rgba(16, 37, 81, 0.92));
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        color: var(--text);
+        text-decoration: none;
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+        transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .cert-card:hover {
+        transform: translateY(-4px);
+        border-color: rgba(124, 231, 255, 0.5);
+        box-shadow: 0 18px 32px rgba(0, 0, 0, 0.32);
+    }
+
+    .cert-card img {
+        width: 100%;
+        height: 280px;
+        object-fit: cover;
+        display: block;
+    }
+
+    .cert-body {
+        padding: 14px 16px 10px 16px;
+    }
+
+    .cert-title { margin: 0 0 6px 0; font-size: 17px; font-weight: 800; }
+    .cert-meta { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.4; }
+
+    .cert-footer {
+        padding: 12px 16px 14px 16px;
+        border-top: 1px solid var(--border);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 13px;
+        color: var(--muted);
+    }
+
+    .pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 7px 10px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid var(--border);
+        color: var(--muted);
+        font-weight: 700;
+        font-size: 12px;
+    }
+
+    .pill-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
+</style>
+
+<section class="page-shell">
+    <div class="cert-hero">
+        <h1>Certifications</h1>
+        <p>Selected credentials and awards.</p>
     </div>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
-
-</html>
+    <div class="cert-grid">
+        <a class="cert-card" href="https://www.credly.com/badges/5fcab04b-77e3-4ff5-80a4-00307402ca72/linked_in_profile" target="_blank">
+            <img src="/images/certificate4.png" class="" alt="IBM Journey to Cloud: Envisioning Your Solution certification badge featuring blue and white colors with IBM branding">
+            <div class="cert-body">
+                <div class="cert-title">Journey to Cloud: Envisioning Your Solution</div>
+                <p class="cert-meta">IBM · Issued Nov 2024</p>
+            </div>
+            <div class="cert-footer">
+                <span class="pill"><span class="pill-dot"></span>IBM</span>
+                <span>View</span>
+            </div>
+        </a>
+        <a class="cert-card" href="https://www.datacamp.com/statement-of-accomplishment/course/1db49e184444857e4e92cab27d05484e63f0480a?raw=1" target="_blank">
+            <img src="images/certificate5.png" alt="Cleaning Data in Python">
+            <div class="cert-body">
+                <div class="cert-title">Cleaning Data in Python</div>
+                <p class="cert-meta">DataCamp · Issued Oct 2024 · Credential ID 1db49e184444857e4e92cab27d05484e63f0480a</p>
+            </div>
+            <div class="cert-footer">
+                <span class="pill"><span class="pill-dot"></span>DataCamp</span>
+                <span>View</span>
+            </div>
+        </a>
+        <a class="cert-card" href="https://www.mygreatlearning.com/certificate/ENCBSODI" target="_blank">
+            <img src="images/certificate6.png" alt="Project Management">
+            <div class="cert-body">
+                <div class="cert-title">Project Management</div>
+                <p class="cert-meta">Great Learning · Issued Oct 2024 · Credential ID ENCBSODI</p>
+            </div>
+            <div class="cert-footer">
+                <span class="pill"><span class="pill-dot"></span>Great Learning</span>
+                <span>View</span>
+            </div>
+        </a>
+        <a class="cert-card" href="https://coursera.org/verify/UCZ5AJYLTWSH" target="_blank">
+            <img src="images/certificate1.png" alt="Data Analysis with Python">
+            <div class="cert-body">
+                <div class="cert-title">Data Analysis with Python</div>
+                <p class="cert-meta">IBM · Issued Jul 2023 · Credential ID UCZ5AJYLTWSH</p>
+            </div>
+            <div class="cert-footer">
+                <span class="pill"><span class="pill-dot"></span>Coursera</span>
+                <span>View</span>
+            </div>
+        </a>
+        <a class="cert-card" href="https://coursera.org/verify/UCZ5AJYLTWSH" target="_blank">
+            <img src="images/certificate2.png" alt="AI For Everyone">
+            <div class="cert-body">
+                <div class="cert-title">AI For Everyone</div>
+                <p class="cert-meta">Coursera · Issued Apr 2020 · Credential ID LUSEHBT5BWWL</p>
+            </div>
+            <div class="cert-footer">
+                <span class="pill"><span class="pill-dot"></span>Coursera</span>
+                <span>View</span>
+            </div>
+        </a>
+        <a class="cert-card" href="https://verify.certiport.com/mWdE-uTYE" target="_blank">
+            <img src="images/certificate3.png" alt="Introduction to Programming using Python">
+            <div class="cert-body">
+                <div class="cert-title">Introduction to Programming using Python</div>
+                <p class="cert-meta">Microsoft Technology Associate · Issued Jul 2020 · Credential ID LUSEHBT5BWWL</p>
+            </div>
+            <div class="cert-footer">
+                <span class="pill"><span class="pill-dot"></span>MTA</span>
+                <span>View</span>
+            </div>
+        </a>
+    </div>
+</section>

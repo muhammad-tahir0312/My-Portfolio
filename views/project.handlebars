@@ -1,137 +1,207 @@
-<!DOCTYPE html>
-<html lang="en">
+<style>
+  .projects-hero {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 24px;
+  }
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-      body {
-        background-color: #1470AF;
-        color: white;
-        font-family: 'Arial', sans-serif;
-      }
-      .project-container {
-        max-width: 1200px;
-        margin: 50px auto;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 20px;
-      }
-      .project-card {
-        background: #fff;
-        color: black;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        overflow: hidden;
-        text-decoration: none;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-      }
-      .project-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-      }
-      .project-card img {
-        width: 100%;
-        height: 200px;
-        object-fit: cover;
-      }
-      .project-card-body {
-        padding: 20px;
-        text-align: center;
-        text-decoration: none;
-      }
-      .project-card-body h2 {
-        font-family: 'Montserrat', sans-serif;
-        font-weight: bolder;
-        font-size: 22px;
-        margin-bottom: 10px;
-      }
-      .project-card-body p {
-        font-size: 16px;
-        line-height: 1.5;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <div class="project-container">
-        <a href="https://github.com/muhammad-tahir0312/Full_Stack_Restaurant_Online_Ordering_Application" target="_blank" class="project-card">
-          <img src="images/first.png" alt="Restaurant Food Ordering App">
-          <div class="project-card-body">
-            <h2>Restaurant Food Ordering App</h2>
-            <p>The Restaurant Food Ordering App allows customers to browse menus, place orders, and make secure payments online.</p>
-          </div>
-        </a>
-        <a href="https://github.com/muhammad-tahir0312/TaskCraft-Pro"  target="_blank"class="project-card">
-          <img src="images/second.png" alt="TaskCraft Pro">
-          <div class="project-card-body">
-            <h2>TaskCraft Pro</h2>
-            <p>Web-based platform for organizing and tracking tasks assigned to employees.</p>
-          </div>
-        </a>
-        <a href="https://github.com/muhammad-tahir0312/COVID-19-PREDICTOR-VACCINATION-APPLICATION-using-DECISION-TREE" target="_blank" class="project-card">
-          <img src="images/third.png" alt="COVID-19 Predictor">
-          <div class="project-card-body">
-            <h2>COVID-19 Predictor</h2>
-            <p>Application for managing COVID vaccination centers and appointments.</p>
-          </div>
-        </a>
-        <a href="https://github.com/muhammad-tahir0312/Smart-Healthcare-System-using-Blockchain" target="_blank" class="project-card">
-          <img src="images/fourth.png" alt="Smart Healthcare System on Blockchain">
-          <div class="project-card-body">
-            <h2>Smart Healthcare System on Blockchain</h2>
-            <p>The Smart Healthcare System using Blockchain addresses fragmented health records by implementing a secure platform using blockchain.</p>
-          </div>
-        </a>
-        <a href="https://github.com/muhammad-tahir0312/4-Bit-Combinational-Lock-System" target="_blank" class="project-card">
-          <img src="images/fifth.jpg" alt="4 Bit Combinational Lock System">
-          <div class="project-card-body">
-            <h2>4 Bit Combinational Lock System</h2>
-            <p>Implemented a combination lock system using XOR and NOR gates. XOR gates act as comparators for input and lock keys, triggering LED indicators or alarm systems based on correctness.</p>
-          </div>
-        </a>
-        <a href="https://github.com/muhammad-tahir0312/Sorting-Program-in-Assembly-Language" target="_blank" class="project-card">
-          <img src="images/sixth.png" alt="Sorting Program in Assembly Language">
-          <div class="project-card-body">
-            <h2>Sorting Program in Assembly Language</h2>
-            <p>The sorting program sorts strings, characters, and integers using nested and normal loops. It is implemented in Visual Studio 2019 using the Irvine library, focusing on structured code with custom and pre-made functions.</p>
-          </div>
-        </a>
-        <a href="https://github.com/muhammad-tahir0312/System-Call-for-Semaphore--Chain-Smoker-Problem" target="_blank" class="project-card">
-          <img src="images/seventh.png" alt="System Call for Semaphore - Chain Smoker Problem">
-          <div class="project-card-body">
-            <h2>System Call for Semaphore - Chain Smoker Problem</h2>
-            <p>Used semaphores and pthreads to solve the synchronization challenge of the Chain Smoker Problem. It demonstrates efficient resource allocation and synchronization principles in operating system design.</p>
-          </div>
-        </a>
-        <a href="https://github.com/muhammad-tahir0312/Implementation-of-a-Parser-for-a-Simple-Context-Free-Grammar" target="_blank" class="project-card">
-          <img src="images/eight.png" alt="Simple Arithmetic Expression Parser">
-          <div class="project-card-body">
-            <h2>Simple Arithmetic Expression Parser</h2>
-            <p>Implemented a recursive descent parser to validate and parse arithmetic expressions according to a specified context-free grammar, supporting addition, multiplication, and parentheses for grouping.</p>
-          </div>
-        </a>
-        <a href="https://github.com/muhammad-tahir0312/GEOMETRIC-ALGORITHMS-LINE-INTERSECTION-CONVEX-HULL-" target="_blank" class="project-card">
-          <img src="images/nine.png" alt="GEOMETRIC ALGORITHMS">
-          <div class="project-card-body">
-            <h2>GEOMETRIC ALGORITHMS</h2>
-            <p>This project explores Convex Hull and Line Intersection algorithms. It evaluates efficiency through algorithms like Brute Force, Jarvis March, Graham Scan, and introduces a novel approach, emphasizing computational geometry insights and practical applications.</p>
-          </div>
-        </a>
-        <a href="https://github.com/muhammad-tahir0312/Efficient-Parallelization-of-Jarvis-March-and-Binary-Search-Tree-Algorithms-with-OpenMP-and-MPI" target="_blank" class="project-card">
-          <img src="images/ten.png" alt="Parallelization of Jarvis March and BST Algorithm with OpenMP and MPI">
-          <div class="project-card-body">
-            <h2>Parallelization of Jarvis March and BST Algorithm with OpenMP and MPI</h2>
-            <p>Parallelize the Jarvis March and Binary Search Tree algorithms with OpenMP and MPI to enhance computational efficiency in geometric and data structure operations.</p>
-          </div>
-        </a>
+  .projects-hero h1 {
+    margin: 0;
+    font-size: 32px;
+    font-weight: 800;
+  }
+
+  .projects-hero p { margin: 0; color: var(--muted); }
+
+  .project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+  }
+
+  .project-card {
+    display: grid;
+    grid-template-rows: 1fr auto;
+    background: linear-gradient(145deg, rgba(19, 47, 99, 0.9), rgba(16, 37, 81, 0.92));
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    text-decoration: none;
+    color: var(--text);
+    box-shadow: var(--shadow);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  }
+
+  .project-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(124, 231, 255, 0.5);
+    box-shadow: 0 18px 32px rgba(0, 0, 0, 0.32);
+  }
+
+  .project-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+  }
+
+  .project-body {
+    padding: 16px 16px 14px 16px;
+    display: grid;
+    gap: 10px;
+  }
+
+  .project-title {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 800;
+  }
+
+  .project-desc {
+    margin: 0;
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  .tag-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 10px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid var(--border);
+    color: var(--muted);
+    font-weight: 700;
+    font-size: 12px;
+  }
+
+  .pill-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
+</style>
+
+<section class="page-shell">
+  <div class="projects-hero">
+    <h1>Projects</h1>
+    <p>A mix of production work, research builds, and systems experiments.</p>
+  </div>
+  <div class="project-grid">
+    <a href="https://github.com/muhammad-tahir0312/Full_Stack_Restaurant_Online_Ordering_Application" target="_blank" class="project-card">
+      <img src="images/first.png" alt="Restaurant Food Ordering App">
+      <div class="project-body">
+        <div class="project-title">Restaurant Food Ordering App</div>
+        <p class="project-desc">Seamless ordering with social sign-in, secure payments, and fast browsing.</p>
+        <div class="tag-row">
+          <span class="pill"><span class="pill-dot"></span>Next.js</span>
+          <span class="pill"><span class="pill-dot"></span>TypeScript</span>
+          <span class="pill"><span class="pill-dot"></span>Stripe</span>
+        </div>
       </div>
-    </div>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-      crossorigin="anonymous"
-    ></script>
-  </body>
-</html>
+    </a>
+    <a href="https://github.com/muhammad-tahir0312/TaskCraft-Pro" target="_blank" class="project-card">
+      <img src="images/second.png" alt="TaskCraft Pro">
+      <div class="project-body">
+        <div class="project-title">TaskCraft Pro</div>
+        <p class="project-desc">Web platform to organize and track tasks for teams.</p>
+        <div class="tag-row">
+          <span class="pill"><span class="pill-dot"></span>React</span>
+          <span class="pill"><span class="pill-dot"></span>Node</span>
+          <span class="pill"><span class="pill-dot"></span>MongoDB</span>
+        </div>
+      </div>
+    </a>
+    <a href="https://github.com/muhammad-tahir0312/COVID-19-PREDICTOR-VACCINATION-APPLICATION-using-DECISION-TREE" target="_blank" class="project-card">
+      <img src="images/third.png" alt="COVID-19 Predictor">
+      <div class="project-body">
+        <div class="project-title">COVID-19 Predictor</div>
+        <p class="project-desc">Vaccination center management and appointment scheduling.</p>
+        <div class="tag-row">
+          <span class="pill"><span class="pill-dot"></span>ML</span>
+          <span class="pill"><span class="pill-dot"></span>Python</span>
+        </div>
+      </div>
+    </a>
+    <a href="https://github.com/muhammad-tahir0312/Smart-Healthcare-System-using-Blockchain" target="_blank" class="project-card">
+      <img src="images/fourth.png" alt="Smart Healthcare System on Blockchain">
+      <div class="project-body">
+        <div class="project-title">Smart Healthcare System on Blockchain</div>
+        <p class="project-desc">Secure, unified health records with blockchain-backed access.</p>
+        <div class="tag-row">
+          <span class="pill"><span class="pill-dot"></span>Blockchain</span>
+          <span class="pill"><span class="pill-dot"></span>Security</span>
+        </div>
+      </div>
+    </a>
+    <a href="https://github.com/muhammad-tahir0312/4-Bit-Combinational-Lock-System" target="_blank" class="project-card">
+      <img src="images/fifth.jpg" alt="4 Bit Combinational Lock System">
+      <div class="project-body">
+        <div class="project-title">4 Bit Combinational Lock System</div>
+        <p class="project-desc">Gate-based combinational lock with alerts for incorrect codes.</p>
+        <div class="tag-row">
+          <span class="pill"><span class="pill-dot"></span>Digital Logic</span>
+        </div>
+      </div>
+    </a>
+    <a href="https://github.com/muhammad-tahir0312/Sorting-Program-in-Assembly-Language" target="_blank" class="project-card">
+      <img src="images/sixth.png" alt="Sorting Program in Assembly Language">
+      <div class="project-body">
+        <div class="project-title">Sorting Program in Assembly Language</div>
+        <p class="project-desc">String, char, and integer sorting with structured MASM code.</p>
+        <div class="tag-row">
+          <span class="pill"><span class="pill-dot"></span>Assembly</span>
+          <span class="pill"><span class="pill-dot"></span>MASM</span>
+        </div>
+      </div>
+    </a>
+    <a href="https://github.com/muhammad-tahir0312/System-Call-for-Semaphore--Chain-Smoker-Problem" target="_blank" class="project-card">
+      <img src="images/seventh.png" alt="System Call for Semaphore - Chain Smoker Problem">
+      <div class="project-body">
+        <div class="project-title">System Call for Semaphore - Chain Smoker Problem</div>
+        <p class="project-desc">Semaphore-based synchronization demo for the chain smoker problem.</p>
+        <div class="tag-row">
+          <span class="pill"><span class="pill-dot"></span>C</span>
+          <span class="pill"><span class="pill-dot"></span>Pthreads</span>
+        </div>
+      </div>
+    </a>
+    <a href="https://github.com/muhammad-tahir0312/Implementation-of-a-Parser-for-a-Simple-Context-Free-Grammar" target="_blank" class="project-card">
+      <img src="images/eight.png" alt="Simple Arithmetic Expression Parser">
+      <div class="project-body">
+        <div class="project-title">Simple Arithmetic Expression Parser</div>
+        <p class="project-desc">Recursive descent parser validating arithmetic expressions.</p>
+        <div class="tag-row">
+          <span class="pill"><span class="pill-dot"></span>C++</span>
+          <span class="pill"><span class="pill-dot"></span>Parsing</span>
+        </div>
+      </div>
+    </a>
+    <a href="https://github.com/muhammad-tahir0312/GEOMETRIC-ALGORITHMS-LINE-INTERSECTION-CONVEX-HULL-" target="_blank" class="project-card">
+      <img src="images/nine.png" alt="GEOMETRIC ALGORITHMS">
+      <div class="project-body">
+        <div class="project-title">Geometric Algorithms</div>
+        <p class="project-desc">Convex hull and line intersection comparisons with multiple algorithms.</p>
+        <div class="tag-row">
+          <span class="pill"><span class="pill-dot"></span>Algorithms</span>
+          <span class="pill"><span class="pill-dot"></span>Geometry</span>
+        </div>
+      </div>
+    </a>
+    <a href="https://github.com/muhammad-tahir0312/Efficient-Parallelization-of-Jarvis-March-and-Binary-Search-Tree-Algorithms-with-OpenMP-and-MPI" target="_blank" class="project-card">
+      <img src="images/ten.png" alt="Parallelization of Jarvis March and BST Algorithm with OpenMP and MPI">
+      <div class="project-body">
+        <div class="project-title">Parallel Jarvis March & BST</div>
+        <p class="project-desc">Parallelized geometry and data-structure routines with OpenMP and MPI.</p>
+        <div class="tag-row">
+          <span class="pill"><span class="pill-dot"></span>OpenMP</span>
+          <span class="pill"><span class="pill-dot"></span>MPI</span>
+        </div>
+      </div>
+    </a>
+  </div>
+</section>
