@@ -189,6 +189,12 @@
       });
     });
 
+    window.addEventListener('scroll', function () {
+      document.querySelectorAll('.tilt-card').forEach(function (card) {
+        card.style.transform = '';
+      });
+    }, { passive: true });
+
     /* Magnetic pull on buttons */
     document.querySelectorAll('.btn, .nav-resume, .nav-logo').forEach(function (el) {
       el.addEventListener('mousemove', function (e) {

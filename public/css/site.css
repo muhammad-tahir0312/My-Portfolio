@@ -791,7 +791,7 @@ main {
 }
 .fade-up.visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: none;
 }
 
 /* Timeline connector */
@@ -1291,12 +1291,32 @@ main {
   padding-top: 40px;
 }
 @media (min-width: 900px) {
-  .resume-layout { grid-template-columns: 280px 1fr; align-items: start; }
+  .resume-layout {
+    grid-template-columns: 280px 1fr;
+    align-items: start;
+  }
 }
 
 .resume-side {
-  position: sticky;
-  top: calc(var(--nav-scroll-height) + 30px);
+  position: relative;
+  z-index: 1;
+}
+
+@media (min-width: 900px) {
+  .resume-side {
+    position: sticky;
+    top: calc(var(--nav-scroll-height) + 30px);
+    align-self: start;
+    max-height: calc(100vh - var(--nav-scroll-height) - 40px);
+    overflow-y: auto;
+    padding-bottom: 8px;
+  }
+}
+
+.resume-main {
+  position: relative;
+  z-index: 2;
+  min-width: 0;
 }
 
 .resume-side h1 {
