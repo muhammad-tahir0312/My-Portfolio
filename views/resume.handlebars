@@ -1,321 +1,213 @@
-<style>
-    .resume-shell {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
+<div class="page-shell resume-layout">
+  <aside class="resume-side fade-up">
+    <p class="page-path"><span class="t-prompt">~</span><span class="t-path">/resume</span> <span class="page-path-cmd">cat profile.pdf</span></p>
+    <p class="hero-overline">Resume</p>
+    <h1>Muhammad Tahir</h1>
+    <p>Software Engineer &amp; AI/ML Researcher — MSCS @ Universiti Malaya. Production apps in aviation, agentic AI for healthcare.</p>
 
-    @media (min-width: 992px) {
-        .resume-shell {
-            grid-template-columns: 380px 1fr;
-            align-items: start;
-            gap: 32px;
-        }
-    }
-
-    .resume-left {
-        position: static;
-        top: auto;
-        background: rgba(255, 255, 255, 0.04);
-        border: 1px solid var(--border);
-        border-radius: var(--radius-lg);
-        padding: 24px;
-        box-shadow: var(--shadow);
-    }
-
-    @media (min-width: 992px) {
-        .resume-left {
-            position: sticky;
-            top: 90px;
-        }
-    }
-
-    .resume-title {
-        font-size: 34px;
-        font-weight: 800;
-        margin: 0 0 10px;
-    }
-
-    .resume-sub {
-        color: var(--muted);
-        margin-bottom: 16px;
-        line-height: 1.5;
-    }
-
-    .resume-actions {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-    }
-
-    .resume-btn {
-        padding: 10px 14px;
-        border-radius: 12px;
-        font-weight: 700;
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        text-decoration: none;
-        color: #0f2b58;
-        background: #f8f8f8;
-    }
-
-    .resume-btn.secondary {
-        background: transparent;
-        color: var(--text);
-    }
-
-    .pill-stack {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
-        margin-top: 14px;
-    }
-
-    .pill {
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        padding: 8px 12px;
-        border-radius: 999px;
-        background: rgba(255, 255, 255, 0.08);
-        border: 1px solid var(--border);
-        color: var(--muted);
-        font-weight: 700;
-        font-size: 13px;
-    }
-
-    .pill-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
-
-    .resume-right { display: grid; gap: 16px; }
-
-    .card-block {
-        background: rgba(255, 255, 255, 0.06);
-        border: 1px solid var(--border);
-        border-radius: var(--radius);
-        padding: 18px 18px 14px 18px;
-        box-shadow: var(--shadow);
-    }
-
-    .card-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 10px;
-    }
-
-    .card-title {
-        font-size: 18px;
-        font-weight: 800;
-        margin: 0;
-    }
-
-    .card-subtitle {
-        color: var(--muted);
-        font-size: 14px;
-        margin: 0 0 8px 0;
-    }
-
-    .item-list { padding-left: 18px; margin: 0; }
-    .item-list li { margin-bottom: 6px; line-height: 1.5; }
-
-    .grid-2 { display: grid; grid-template-columns: 1fr; gap: 12px; }
-    @media (min-width: 768px) { .grid-2 { grid-template-columns: repeat(2, 1fr); } }
-</style>
-
-<section class="page-shell resume-shell">
-    <div class="resume-left">
-        <h1 class="resume-title">Resume</h1>
-        <p class="resume-sub">Associate SDE focused on production-grade web and
-            mobile apps. I ship resilient backends, polished UIs, and
-            data/AI-driven features.</p>
-        <div class="resume-actions">
-            <a class="resume-btn"
-                href="https://drive.google.com/file/d/1SslPLctytPuhOb_GH-zr9gouzaEE3QEd/view?usp=drive_link"
-                target="_blank">PDF Resume</a>
-            <a class="resume-btn secondary"
-                href="mailto:mtahirkhanyousufzai@gmail.com">Email</a>
-            <a class="resume-btn secondary" href="tel:+923079454287">Call</a>
-        </div>
-        <div class="pill-stack">
-            <span class="pill"><span class="pill-dot"></span>Karachi,
-                Pakistan</span>
-            <span class="pill"><span class="pill-dot"></span>BS (CS) FAST | Jun
-                2025 | CGPA 3.45</span>
-        </div>
+    <div class="btn-row" style="margin-top:0;margin-bottom:24px;">
+      <a class="btn btn-solid" href="https://drive.google.com/uc?export=download&id=1Yb4yCUudxgAYccvN1qaPRyzyL0CFvvfi" target="_blank" rel="noopener noreferrer">Download PDF</a>
+      <a class="btn btn-outline" href="https://drive.google.com/file/d/1Yb4yCUudxgAYccvN1qaPRyzyL0CFvvfi/view?usp=drive_link" target="_blank" rel="noopener noreferrer">View PDF</a>
     </div>
 
-    <div class="resume-right">
-        <div class="card-block">
-            <div class="card-header">
-                <h3 class="card-title">Education</h3>
-            </div>
-            <div class="card-subtitle">BS (CS) — National University of Computer
-                and Emerging Sciences (FAST), Karachi</div>
-            <div class="card-subtitle mx-2">· Aug 2021 – Jun 2025</div>
-            <div class="card-subtitle mx-2">· CGPA 3.45</div>
-            <div class="pill-stack">
-                <span class="pill">Information Retrieval</span>
-                <span class="pill">DevOps</span>
-                <span class="pill">Data Science</span>
-                <span class="pill">Database Systems</span>
-                <span class="pill">Software Engineering</span>
-                <span class="pill">Software Engineering Economics</span>
-                <span class="pill">Software For Mobile Devices (Flutter)</span>
-                <span class="pill">OOP & Data Structures</span>
-            </div>
-        </div>
-
-        <div class="card-block">
-            <div class="card-header">
-                <h3 class="card-title">Experience</h3>
-            </div>
-            <div class="card-subtitle">Ikhwatech — Associate Software
-                Development Engineer · Jan 2025 – Present</div>
-            <ul class="item-list">
-                <li>Develop production apps for aviation clients with React,
-                    React Native, and Spring Boot.</li>
-                <li>Contribute across the stack: UI polish, backend API
-                    integration, database management, and automated tests with
-                    JUnit 5 and Cypress.</li>
-                <li>Optimize for scalability, security, and performance using
-                    engineering best practices.</li>
-            </ul>
-            <div class="card-subtitle" style="margin-top:12px;">Bloomrix —
-                Software Engineering Intern · Aug 2024 – Nov 2024</div>
-            <ul class="item-list">
-                <li>Delivered full-stack features in React, Node.js, and PHP
-                    within Agile sprints.</li>
-                <li>Assisted with project management, team ceremonies, and
-                    production-quality deliveries.</li>
-                <li>Participated in weekly trainings on best practices and
-                    advanced technical skills.</li>
-            </ul>
-        </div>
-
-        <div class="card-block">
-            <div class="card-header">
-                <h3 class="card-title">Research & Projects</h3>
-            </div>
-            <div class="card-subtitle">Identification of Neurological Diseases
-                using Deep Learning · 2025</div>
-            <ul class="item-list">
-                <li>Built a CNN-based system to identify Alzheimer’s-associated
-                    SNPs and classify patients (75% accuracy).</li>
-                <li>Introduced a Phenotype Influence Score to select markers,
-                    outperforming XGBoost and Random Forest baselines.</li>
-                <li>Applied to ADNI dataset, highlighting APOE risk loci and
-                    surfacing novel variants for early diagnosis.</li>
-            </ul>
-            <div class="card-subtitle" style="margin-top:12px;">Online
-                Restaurant Food Ordering Website · May 2024</div>
-            <ul class="item-list">
-                <li>Built a responsive Next.js + Tailwind + TypeScript frontend
-                    with Node.js backend.</li>
-                <li>Enabled social sign-in (Google/Facebook), Stripe payments,
-                    and MongoDB-backed ordering.</li>
-                <li>Focused on intuitive navigation and low-latency checkout
-                    flows.</li>
-            </ul>
-        </div>
-
-        <div class="card-block">
-            <div class="card-header">
-                <h3 class="card-title">Skills</h3>
-            </div>
-            <div class="grid-2">
-                <div>
-                    <div class="card-subtitle">Languages & Frameworks</div>
-                    <div class="pill-stack">
-                        <span class="pill">C/C++</span>
-                        <span class="pill">Python</span>
-                        <span class="pill">JavaScript</span>
-                        <span class="pill">TypeScript</span>
-                        <span class="pill">Java</span>
-                        <span class="pill">Spring Boot</span>
-                        <span class="pill">PHP</span>
-                        <span class="pill">React</span>
-                        <span class="pill">React Native</span>
-                        <span class="pill">Node.js</span>
-                        <span class="pill">Express.js</span>
-                        <span class="pill">FastAPI</span>
-                    </div>
-                </div>
-                <div>
-                    <div class="card-subtitle">Data, AI, and Parallel</div>
-                    <div class="pill-stack">
-                        <span class="pill">CUDA</span>
-                        <span class="pill">MPI</span>
-                        <span class="pill">OpenMP</span>
-                        <span class="pill">Pandas</span>
-                        <span class="pill">Numpy</span>
-                        <span class="pill">Seaborn</span>
-                        <span class="pill">Scikit-learn</span>
-                        <span class="pill">TensorFlow</span>
-                        <span class="pill">Keras</span>
-                    </div>
-                </div>
-                <div>
-                    <div class="card-subtitle" style="margin-top:12px;">Cloud &
-                        Tools</div>
-                    <div class="pill-stack">
-                        <span class="pill">AWS (EC2, S3, CI/CD)</span>
-                        <span class="pill">Docker</span>
-                        <span class="pill">Git/GitHub</span>
-                        <span class="pill">Ubuntu & Bash</span>
-                        <span class="pill">x86 Assembly</span>
-                    </div>
-                </div>
-                <div>
-                    <div class="card-subtitle" style="margin-top:12px;">Testing
-                        & Quality</div>
-                    <div class="pill-stack">
-                        <span class="pill">JUnit 5</span>
-                        <span class="pill">Cypress</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="card-block">
-            <div class="card-header">
-                <h3 class="card-title">Certifications & Awards</h3>
-            </div>
-            <div class="pill-stack" style="margin-bottom:12px;">
-                <span class="pill">Data Cleaning in Python — DataCamp
-                    (2024)</span>
-                <span class="pill">Docker — Kode Kloud (2024)</span>
-                <span class="pill">Project Management — Great Learning
-                    (2024)</span>
-                <span class="pill">Data Analysis with Python — Coursera
-                    (2023)</span>
-                <span class="pill">AI for Everyone — Coursera (2023)</span>
-                <span class="pill">Introduction to Python — Microsoft
-                    (2020)</span>
-            </div>
-            <div class="pill-stack">
-                <span class="pill">Rector’s List Award (Fall 2025)</span>
-                <span class="pill">Dean’s List (Fall 2023, Spring 2024, Fall
-                    2024)</span>
-            </div>
-        </div>
-
-        <div class="card-block">
-            <div class="card-header">
-                <h3 class="card-title">Interests & Soft Skills</h3>
-            </div>
-            <div class="pill-stack" style="margin-bottom:12px;">
-                <span class="pill">Software Engineering</span>
-                <span class="pill">Full-Stack Development</span>
-                <span class="pill">Artificial Intelligence & Machine
-                    Learning</span>
-                <span class="pill">Data Science & Analytics</span>
-            </div>
-            <div class="pill-stack">
-                <span class="pill">Communication & Collaboration</span>
-                <span class="pill">Critical Thinking</span>
-                <span class="pill">Problem Solving</span>
-                <span class="pill">Time Management</span>
-                <span class="pill">Multitasking</span>
-            </div>
-        </div>
+    <div class="contact-list">
+      <a class="contact-link" href="mailto:mtahirkhanyousufzai@gmail.com">mtahirkhanyousufzai@gmail.com</a>
+      <a class="contact-link" href="tel:+60193021463">+60 19-302 1463</a>
+      <a class="contact-link" href="tel:+923079454287">+92 307 9454287</a>
     </div>
-</section>
+
+    <div class="social-row">
+      <a class="social-icon" href="https://github.com/muhammad-tahir0312" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+      </a>
+      <a class="social-icon" href="https://www.linkedin.com/in/muhammad-tahir-0ab1291b2/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 114.126 0 2.063 2.063 0 01-2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      </a>
+    </div>
+
+    <ul class="tech-list">
+      <li>Kuala Lumpur, Malaysia</li>
+      <li class="tag-green">Open to Remote</li>
+    </ul>
+  </aside>
+
+  <div>
+    <section class="section fade-up" style="padding-top:0;padding-bottom:60px;">
+      <h2 class="section-heading"><span class="section-num">01.</span> Education</h2>
+      <div class="jobs-list timeline">
+        <div class="job-item">
+          <div class="job-date">2026 — Now</div>
+          <div>
+            <h3 class="job-title">MSCS · <span class="company">Universiti Malaya</span></h3>
+            <ul class="job-desc">
+              <li>AI/ML for healthcare — cardiac MRI, multi-agent systems, clinical decision support.</li>
+              <li>Research in agentic AI, medical imaging, and RAG-based diagnostic pipelines.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="job-item">
+          <div class="job-date">2021 — 2025</div>
+          <div>
+            <h3 class="job-title">BS (CS) · <span class="company">FAST-NUCES</span></h3>
+            <ul class="job-desc">
+              <li>CGPA 3.45 — Ranked 43rd of 398 students.</li>
+              <li>FAST Data Science Society · Google Developer Student Club.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section fade-up" style="padding-top:0;padding-bottom:60px;">
+      <h2 class="section-heading"><span class="section-num">02.</span> Experience</h2>
+      <div class="jobs-list timeline">
+        <div class="job-item">
+          <div class="job-date">Jun 2025 — Apr 2026</div>
+          <div>
+            <h3 class="job-title">Associate SDE · <span class="company">Ikhwa Technologies</span></h3>
+            <ul class="job-desc">
+              <li>AviationIndex full-stack — React, TypeScript, NestJS, Postgres, Cypress.</li>
+              <li>TrackOps enhancements, API integrations (NOTAMs, weather, flight data).</li>
+            </ul>
+            <p class="project-role" style="margin-top:12px;">
+              <a href="https://aviationindex.co" target="_blank" rel="noopener noreferrer">aviationindex.co</a> ·
+              <a href="https://aeroworld.trackops.io" target="_blank" rel="noopener noreferrer">aeroworld.trackops.io</a> ·
+              <a href="https://play.google.com/store/apps/details?id=com.ebre.rider" target="_blank" rel="noopener noreferrer">Google Play</a>
+            </p>
+          </div>
+        </div>
+        <div class="job-item">
+          <div class="job-date">Feb — May 2025</div>
+          <div>
+            <h3 class="job-title">Teaching Assistant · <span class="company">FAST-NUCES</span></h3>
+            <ul class="job-desc"><li>Computer Architecture — assembly, processor organization, memory systems.</li></ul>
+          </div>
+        </div>
+        <div class="job-item">
+          <div class="job-date">Jan — Jun 2025</div>
+          <div>
+            <h3 class="job-title">Junior SDE · <span class="company">Ikhwa Technologies</span></h3>
+            <ul class="job-desc">
+              <li>TrackOps UI, Libree web + React Native mobile apps.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="job-item">
+          <div class="job-date">Aug — Nov 2024</div>
+          <div>
+            <h3 class="job-title">Software Engineering Intern · <span class="company">Bloomrix</span></h3>
+            <ul class="job-desc"><li>Full-stack features in React, Node.js, and PHP (remote).</li></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section fade-up" style="padding-top:0;padding-bottom:60px;">
+      <h2 class="section-heading"><span class="section-num">03.</span> Skills</h2>
+      <div class="skills-matrix">
+
+        <article class="skill-category">
+          <h3 class="skill-category-title"><span class="skill-category-num">//</span> Frontend</h3>
+          <ul class="skill-items">
+            <li class="skill-item"><img class="skill-icon" src="https://cdn.simpleicons.org/react/64ffda" alt="" width="18" height="18" loading="lazy"><span>React</span></li>
+            <li class="skill-item"><img class="skill-icon" src="https://cdn.simpleicons.org/react/64ffda" alt="" width="18" height="18" loading="lazy"><span>React Native</span></li>
+            <li class="skill-item"><img class="skill-icon" src="https://cdn.simpleicons.org/typescript/64ffda" alt="" width="18" height="18" loading="lazy"><span>TypeScript</span></li>
+            <li class="skill-item"><img class="skill-icon" src="https://cdn.simpleicons.org/nextdotjs/64ffda" alt="" width="18" height="18" loading="lazy"><span>Next.js</span></li>
+            <li class="skill-item"><img class="skill-icon" src="https://cdn.simpleicons.org/html5/64ffda" alt="" width="18" height="18" loading="lazy"><span>HTML / CSS</span></li>
+            <li class="skill-item"><img class="skill-icon" src="https://cdn.simpleicons.org/redux/64ffda" alt="" width="18" height="18" loading="lazy"><span>Redux</span></li>
+          </ul>
+        </article>
+
+        <article class="skill-category">
+          <h3 class="skill-category-title"><span class="skill-category-num">//</span> Backend</h3>
+          <ul class="skill-items">
+            <li class="skill-item"><img class="skill-icon" src="https://cdn.simpleicons.org/nodedotjs/64ffda" alt="" width="18" height="18" loading="lazy"><span>Node.js</span></li>
+            <li class="skill-item"><img class="skill-icon" src="https://cdn.simpleicons.org/nestjs/64ffda" alt="" width="18" height="18" loading="lazy"><span>NestJS</span></li>
+            <li class="skill-item"><img class="skill-icon" src="https://cdn.simpleicons.org/springboot/64ffda" alt="" width="18" height="18" loading="lazy"><span>Spring Boot</span></li>
+            <li class="skill-item"><img class="skill-icon" src="https://cdn.simpleicons.org/openjdk/64ffda" alt="" width="18" height="18" loading="lazy"><span>Java</span></li>
+            <li class="skill-item"><img class="skill-icon" src="https://cdn.simpleicons.org/express/64ffda" alt="" width="18" height="18" loading="lazy"><span>REST APIs</span></li>
+            <li class="skill-item"><img class="skill-icon" src="https://cdn.simpleicons.org/solidity/64ffda" alt="" width="18" height="18" loading="lazy"><span>Solidity</span></li>
+            <li class="skill-item"><img class="skill-icon" src="https://cdn.simpleicons.org/php/64ffda" alt="" width="18" height="18" loading="lazy"><span>PHP</span></li>
+          </ul>
+        </article>
+
+        <article class="skill-category">
+          <h3 class="skill-category-title"><span class="skill-category-num">//</span> AI / ML</h3>
+          <ul class="skill-items">
+            <li class="skill-item"><img class="skill-icon" src="https://cdn.simpleicons.org/python/64ffda" alt="" width="18" height="18" loading="lazy"><span>Python</span></li>
+            <li class="skill-item"><img class="skill-icon" src="https://cdn.simpleicons.org/pytorch/64ffda" alt="" width="18" height="18" loading="lazy"><span>PyTorch</span></li>
+            <li class="skill-item"><img class="skill-icon" src="https://cdn.simpleicons.org/tensorflow/64ffda" alt="" width="18" height="18" loading="lazy"><span>TensorFlow</span></li>
+            <li class="skill-item"><img class="skill-icon" src="/images/icons/agentic-ai.svg" alt="" width="18" height="18" loading="lazy"><span>Agentic AI</span></li>
+            <li class="skill-item"><img class="skill-icon" src="https://cdn.simpleicons.org/huggingface/64ffda" alt="" width="18" height="18" loading="lazy"><span>RAG</span></li>
+            <li class="skill-item"><img class="skill-icon" src="https://cdn.simpleicons.org/opencv/64ffda" alt="" width="18" height="18" loading="lazy"><span>Computer Vision</span></li>
+          </ul>
+        </article>
+
+        <article class="skill-category">
+          <h3 class="skill-category-title"><span class="skill-category-num">//</span> Data Science</h3>
+          <ul class="skill-items">
+            <li class="skill-item"><img class="skill-icon" src="https://cdn.simpleicons.org/pandas/64ffda" alt="" width="18" height="18" loading="lazy"><span>Pandas</span></li>
+            <li class="skill-item"><img class="skill-icon" src="https://cdn.simpleicons.org/numpy/64ffda" alt="" width="18" height="18" loading="lazy"><span>NumPy</span></li>
+            <li class="skill-item"><img class="skill-icon" src="https://cdn.simpleicons.org/scikitlearn/64ffda" alt="" width="18" height="18" loading="lazy"><span>Scikit-learn</span></li>
+            <li class="skill-item"><img class="skill-icon" src="https://cdn.simpleicons.org/jupyter/64ffda" alt="" width="18" height="18" loading="lazy"><span>Jupyter</span></li>
+            <li class="skill-item"><img class="skill-icon" src="/images/icons/matlab.svg" alt="" width="18" height="18" loading="lazy"><span>MATLAB</span></li>
+            <li class="skill-item"><img class="skill-icon" src="/images/icons/data-analysis.svg" alt="" width="18" height="18" loading="lazy"><span>Data Analysis</span></li>
+          </ul>
+        </article>
+
+        <article class="skill-category">
+          <h3 class="skill-category-title"><span class="skill-category-num">//</span> Database</h3>
+          <ul class="skill-items">
+            <li class="skill-item"><img class="skill-icon" src="https://cdn.simpleicons.org/postgresql/64ffda" alt="" width="18" height="18" loading="lazy"><span>PostgreSQL</span></li>
+            <li class="skill-item"><img class="skill-icon" src="https://cdn.simpleicons.org/mongodb/64ffda" alt="" width="18" height="18" loading="lazy"><span>MongoDB</span></li>
+            <li class="skill-item"><img class="skill-icon" src="https://cdn.simpleicons.org/mysql/64ffda" alt="" width="18" height="18" loading="lazy"><span>MySQL</span></li>
+            <li class="skill-item"><img class="skill-icon" src="https://cdn.simpleicons.org/redis/64ffda" alt="" width="18" height="18" loading="lazy"><span>Redis</span></li>
+          </ul>
+        </article>
+
+        <article class="skill-category">
+          <h3 class="skill-category-title"><span class="skill-category-num">//</span> CI/CD &amp; DevOps</h3>
+          <ul class="skill-items">
+            <li class="skill-item"><img class="skill-icon" src="https://cdn.simpleicons.org/git/64ffda" alt="" width="18" height="18" loading="lazy"><span>Git</span></li>
+            <li class="skill-item"><img class="skill-icon" src="https://cdn.simpleicons.org/githubactions/64ffda" alt="" width="18" height="18" loading="lazy"><span>GitHub Actions</span></li>
+            <li class="skill-item"><img class="skill-icon" src="https://cdn.simpleicons.org/docker/64ffda" alt="" width="18" height="18" loading="lazy"><span>Docker</span></li>
+            <li class="skill-item"><img class="skill-icon" src="/images/icons/aws.svg" alt="" width="18" height="18" loading="lazy"><span>AWS</span></li>
+            <li class="skill-item"><img class="skill-icon" src="https://cdn.simpleicons.org/cypress/64ffda" alt="" width="18" height="18" loading="lazy"><span>Cypress</span></li>
+            <li class="skill-item"><img class="skill-icon" src="https://cdn.simpleicons.org/junit5/64ffda" alt="" width="18" height="18" loading="lazy"><span>JUnit 5</span></li>
+          </ul>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="section fade-up" style="padding-top:0;">
+      <h2 class="section-heading"><span class="section-num">04.</span> Awards</h2>
+      <div class="awards-grid">
+
+        <article class="award-card">
+          <div class="award-icon-wrap">
+            <img class="award-icon" src="/images/icons/trophy.svg" alt="" width="28" height="28">
+          </div>
+          <div class="award-body">
+            <h3 class="award-title">Gold Medal / Rector's List Award</h3>
+            <p class="award-meta">Fall 2025 · FAST-NUCES</p>
+            <p class="award-desc">Top honours for outstanding academic performance across the BS Computer Science programme.</p>
+            <p class="award-desc">Recognised for semester GPA placing among the highest-performing students university-wide.</p>
+          </div>
+        </article>
+
+        <article class="award-card">
+          <div class="award-icon-wrap">
+            <img class="award-icon" src="/images/icons/star.svg" alt="" width="28" height="28">
+          </div>
+          <div class="award-body">
+            <h3 class="award-title">Dean's List</h3>
+            <p class="award-meta">2023 – 2024 · FAST-NUCES</p>
+            <p class="award-desc">Consistent academic distinction across consecutive semesters in the CS programme.</p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+  </div>
+</div>

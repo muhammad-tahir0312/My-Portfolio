@@ -1,296 +1,237 @@
-<style>
-    .home-shell {
-        position: relative;
-        overflow: hidden;
-    }
+<div class="page-shell">
+  <section class="hero">
+    <div class="hero-split">
+      <div class="hero-main">
+        <p class="hero-overline"><span class="blink">▸</span> Hi, my name is</p>
+        <h1 class="hero-name">Muhammad Tahir<span class="accent-dot">.</span></h1>
+        <h2 class="hero-tagline">I build intelligent systems &amp; production software.</h2>
+        <p class="hero-desc">
+          Software Engineer &amp; AI/ML Researcher — MSCS @ Universiti Malaya, Kuala Lumpur.
+          Full-stack developer with live aviation platforms and a published Google Play app. Open to remote worldwide.
+        </p>
 
-    .home-shell::before,
-    .home-shell::after {
-        content: "";
-        position: absolute;
-        border-radius: 50%;
-        filter: blur(70px);
-        opacity: 0.45;
-        z-index: 0;
-    }
-
-    .home-shell::before {
-        width: 340px;
-        height: 340px;
-        background: #1e9bff;
-        top: -140px;
-        left: -120px;
-    }
-
-    .home-shell::after {
-        width: 380px;
-        height: 380px;
-        background: #7ce7ff;
-        bottom: -200px;
-        right: -140px;
-    }
-
-    .hero-card {
-        position: relative;
-        z-index: 1;
-        display: grid;
-        gap: 24px;
-        grid-template-columns: 1fr;
-        background: linear-gradient(135deg, rgba(19, 47, 99, 0.85), rgba(16, 37, 81, 0.9));
-        border: 1px solid var(--border);
-        border-radius: var(--radius-lg);
-        padding: 30px;
-        box-shadow: var(--shadow);
-        backdrop-filter: blur(8px);
-    }
-
-    @media (min-width: 992px) {
-        .hero-card {
-            grid-template-columns: 5fr 4fr;
-            padding: 38px;
-        }
-    }
-
-    .avatar-wrap {
-        width: 190px;
-        height: 190px;
-        border-radius: 50%;
-        background: linear-gradient(135deg, #1e9bff, #7ce7ff);
-        padding: 6px;
-        margin: 0 auto 16px auto;
-        box-shadow: 0 16px 32px rgba(0, 0, 0, 0.35);
-    }
-
-    .avatar-wrap img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border-radius: 50%;
-        display: block;
-    }
-
-    .tag-row {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
-        justify-content: center;
-        margin-bottom: 12px;
-    }
-
-    .tag {
-        background: rgba(255, 255, 255, 0.08);
-        border: 1px solid var(--border);
-        color: var(--muted);
-        padding: 8px 12px;
-        border-radius: 999px;
-        font-size: 13px;
-        font-weight: 700;
-        letter-spacing: 0.2px;
-    }
-
-    .hero-title {
-        font-size: clamp(30px, 5vw, 44px);
-        font-weight: 800;
-        line-height: 1.15;
-        margin: 8px 0 12px 0;
-        text-align: center;
-    }
-
-    .hero-lead {
-        font-size: 17px;
-        line-height: 1.6;
-        color: var(--muted);
-        text-align: center;
-        margin-bottom: 18px;
-    }
-
-    .cta-row {
-        display: flex;
-        gap: 10px;
-        justify-content: center;
-        flex-wrap: wrap;
-        margin-bottom: 20px;
-    }
-
-    .btn-pill {
-        border-radius: 999px;
-        padding: 11px 18px;
-        font-weight: 700;
-        border: 1px solid rgba(255, 255, 255, 0.28);
-        color: #0f2b58;
-        background: #f8f8f8;
-        text-decoration: none;
-    }
-
-    .btn-pill.secondary {
-        background: transparent;
-        color: var(--text);
-        border-color: rgba(255, 255, 255, 0.18);
-    }
-
-    .contact-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-        gap: 12px;
-        margin-bottom: 8px;
-    }
-
-    .contact-card {
-        background: rgba(255, 255, 255, 0.08);
-        border: 1px solid var(--border);
-        border-radius: 12px;
-        padding: 12px 14px;
-        text-align: center;
-        color: #e7eef5;
-        text-decoration: none;
-        font-weight: 700;
-        font-size: 14px;
-        word-break: break-word;
-        overflow-wrap: anywhere;
-    }
-
-    .contact-card:hover {
-        background: rgba(255, 255, 255, 0.14);
-    }
-
-    .hero-right {
-        display: grid;
-        gap: 16px;
-    }
-
-    .panel {
-        background: #f3f6fb;
-        color: #0f2b58;
-        border-radius: var(--radius);
-        padding: 20px;
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.18);
-    }
-
-    .panel h3 {
-        margin-top: 0;
-        margin-bottom: 10px;
-        font-weight: 800;
-        font-size: 18px;
-    }
-
-    .panel ul {
-        padding-left: 18px;
-        margin: 0;
-    }
-
-    .panel li {
-        margin-bottom: 8px;
-        font-size: 15px;
-        line-height: 1.5;
-    }
-
-    .stat-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 12px;
-    }
-
-    .stat-card {
-        background: rgba(255, 255, 255, 0.06);
-        border: 1px solid rgba(255, 255, 255, 0.12);
-        color: var(--text);
-        border-radius: 14px;
-        padding: 14px 16px;
-        display: grid;
-        gap: 6px;
-    }
-
-    .stat-label {
-        font-size: 13px;
-        text-transform: uppercase;
-        letter-spacing: 0.4px;
-        color: var(--muted);
-        font-weight: 800;
-    }
-
-    .stat-value {
-        font-size: 16px;
-        font-weight: 800;
-    }
-
-    @media (min-width: 992px) {
-        .hero-title,
-        .hero-lead,
-        .tag-row,
-        .cta-row {
-            text-align: left;
-            justify-content: flex-start;
-        }
-
-        .avatar-wrap {
-            margin-left: 0;
-        }
-    }
-</style>
-
-<section class="page-shell home-shell">
-    <div class="hero-card">
-        <div>
-            <div class="avatar-wrap">
-                <img src="images/mypic.png" alt="Profile Picture">
-            </div>
-            <div class="tag-row">
-                <span class="tag">Associate SDE @ Ikhwatech</span>
-                <span class="tag">Karachi, Pakistan</span>
-                <span class="tag">BS (CS) FAST · Jun 2025 · CGPA 3.45</span>
-            </div>
-            <h1 class="hero-title">Muhammad Tahir</h1>
-            <p class="hero-lead">I build production-ready web and mobile apps
-                with React, React Native, Node/Express, and Spring Boot. I care
-                about resilient backends, polished UI engineering, and using
-                data and AI/ML to ship secure, scalable experiences.</p>
-            <div class="cta-row">
-                <a class="btn-pill" href="/resume">View Resume</a>
-                <a class="btn-pill secondary" href="/project">Projects</a>
-            </div>
-            <div class="contact-grid">
-                <a class="contact-card"
-                    href="mailto:mtahirkhanyousufzai@gmail.com">mtahirkhanyousufzai@gmail.com</a>
-                <a class="contact-card" href="tel:+923079454287">+92 307
-                    9454287</a>
-            </div>
-            <div class="contact-grid">
-                <a class="contact-card"
-                    href="https://github.com/muhammad-tahir0312"
-                    target="_blank">GitHub</a>
-                <a class="contact-card"
-                    href="https://www.linkedin.com/in/muhammad-tahir-0ab1291b2/"
-                    target="_blank">LinkedIn</a>
-            </div>
+        <div class="metrics-bar">
+          <div class="metric"><span class="metric-val">3</span><span class="metric-label">Live Products</span></div>
+          <div class="metric"><span class="metric-val">2+</span><span class="metric-label">Yrs Experience</span></div>
+          <div class="metric"><span class="metric-val status-pulse">●</span><span class="metric-label">Open to Remote</span></div>
         </div>
 
-        <div class="hero-right">
-            <div class="panel">
-                <h3>What I do</h3>
-                <ul>
-                    <li>Ship secure, scalable features across React/React Native
-                        frontends and Spring Boot or Node/Express backends.</li>
-                    <li>Automate quality with JUnit 5 and Cypress, and tune
-                        performance for production workloads.</li>
-                    <li>Apply data- and AI-driven thinking to improve product
-                        reliability and user experience.</li>
-                </ul>
-            </div>
-            <div class="stat-grid">
-                <div class="stat-card">
-                    <div class="stat-label">Current</div>
-                    <div class="stat-value">Associate SDE, Ikhwatech</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-label">Focus</div>
-                    <div class="stat-value">Full-stack · AI/ML · Data</div>
-                </div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-label">Tooling</div>
-                <div class="stat-value">React, React Native, Java, Spring Boot, Node/Express,
-                    AWS (EC2, S3, CI/CD pipeline), Docker, Python, FAST API</div>
-            </div>
+        <div class="btn-row">
+          <a class="btn btn-outline" href="/project">View Projects</a>
+          <a class="btn btn-ghost-tech" href="/resume">Resume</a>
         </div>
+      </div>
+
+      <div class="terminal" aria-label="Developer terminal preview">
+        <div class="terminal-bar">
+          <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+          <span class="terminal-title">~/tahir — bash</span>
+        </div>
+        <div class="terminal-body">
+          <p><span class="t-prompt">muhammad-tahir@portfolio</span>:<span class="t-path">~</span>$ whoami</p>
+          <p class="t-out">muhammad-tahir</p>
+          <p><span class="t-prompt">muhammad-tahir@portfolio</span>:<span class="t-path">~</span>$ cat role.json</p>
+          <p class="t-out t-code">{</p>
+          <p class="t-out t-code t-indent"><span class="t-key">"role"</span>: <span class="t-str">"Software Engineer &amp; AI/ML Researcher"</span>,</p>
+          <p class="t-out t-code t-indent"><span class="t-key">"focus"</span>: [<span class="t-str">"Agentic AI"</span>, <span class="t-str">"React"</span>, <span class="t-str">"PyTorch"</span>, <span class="t-str">"NestJS"</span>],</p>
+          <p class="t-out t-code t-indent"><span class="t-key">"location"</span>: <span class="t-str">"Kuala Lumpur, MY"</span></p>
+          <p class="t-out t-code">}</p>
+          <p><span class="t-prompt">muhammad-tahir@portfolio</span>:<span class="t-path">~</span>$ <span id="typeTarget"></span><span class="blink">_</span></p>
+        </div>
+      </div>
     </div>
-</section>
+  </section>
+
+  <section class="section fade-up" id="about">
+    <h2 class="section-heading"><span class="section-num">01.</span> About Me</h2>
+    <div class="about-grid">
+      <div class="section-text">
+        <ul class="info-list about-location">
+          <li>Currently based in Kuala Lumpur, Malaysia</li>
+        </ul>
+        <p>
+          I'm a Software Engineer and AI/ML Researcher pursuing an MSCS at
+          <span class="company-inline">Universiti Malaya</span>, Kuala Lumpur, after completing my BS in Computer Science at
+          FAST-NUCES, Pakistan. My interests span Agentic AI, multi-agent systems, healthcare AI, and scalable intelligent software.
+        </p>
+        <p>
+          My current research focuses on multi-agent, AI-driven healthcare, cardiac MRI analysis, deep learning for medical imaging,
+          and RAG-based systems that integrate clinical guidelines into diagnostic pipelines. I'm especially drawn to
+          explainable and trustworthy multi-agent AI for clinical applications.
+        </p>
+        <p>
+          Alongside research, I've shipped production web and mobile apps with React, React Native, NestJS, Spring Boot, and Node.js,
+          including <a href="https://aviationindex.co" target="_blank" rel="noopener noreferrer">Aviation Index</a>
+          and <a href="https://aeroworld.trackops.io" target="_blank" rel="noopener noreferrer">TrackOps</a>.
+          I've also explored blockchain-integrated AI with Solidity and Multichain. Dean's &amp; Rector's List honouree; Gold Medal for academic excellence.
+        </p>
+        <p>Technologies I work with:</p>
+        <div class="tech-grid">
+          <span class="tech-chip">React</span>
+          <span class="tech-chip">React Native</span>
+          <span class="tech-chip">TypeScript</span>
+          <span class="tech-chip">NestJS</span>
+          <span class="tech-chip">Spring Boot</span>
+          <span class="tech-chip">Node.js</span>
+          <span class="tech-chip">Python</span>
+          <span class="tech-chip">PyTorch</span>
+          <span class="tech-chip">Agentic AI</span>
+          <span class="tech-chip">RAG</span>
+          <span class="tech-chip">Postgres</span>
+          <span class="tech-chip">Cypress</span>
+        </div>
+      </div>
+      <div class="about-photo">
+        <img src="/images/mypic.png" alt="Muhammad Tahir">
+      </div>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="experience">
+    <h2 class="section-heading"><span class="section-num">02.</span> Where I've Worked</h2>
+    <div class="jobs-list timeline">
+      <div class="job-item">
+        <div class="job-date">2026 — Present</div>
+        <div>
+          <h3 class="job-title">MSCS Researcher · <span class="company">Universiti Malaya</span></h3>
+          <ul class="job-desc">
+            <li>Multi-agent AI for cardiac MRI analysis, HCM detection, and clinical decision support.</li>
+            <li>RAG-based pipelines integrating clinical guidelines; explainable multi-agent healthcare systems.</li>
+          </ul>
+          <ul class="tech-list">
+            <li>PyTorch</li><li>Agentic AI</li><li>RAG</li><li>Medical Imaging</li>
+          </ul>
+        </div>
+      </div>
+      <div class="job-item">
+        <div class="job-date">Jun 2025 — Apr 2026</div>
+        <div>
+          <h3 class="job-title">Associate SDE · <span class="company">Ikhwa Technologies</span></h3>
+          <ul class="job-desc">
+            <li>Full-stack on AviationIndex — subscription aviation intelligence platform (React, TypeScript, NestJS, Postgres).</li>
+            <li>Enhanced TrackOps workflows, search, auth, and premium subscriptions; Cypress testing &amp; API integrations.</li>
+          </ul>
+          <ul class="tech-list">
+            <li>React</li><li>NestJS</li><li>TypeScript</li><li>Postgres</li><li>Cypress</li>
+          </ul>
+        </div>
+      </div>
+      <div class="job-item">
+        <div class="job-date">Jan — Jun 2025</div>
+        <div>
+          <h3 class="job-title">Junior SDE · <span class="company">Ikhwa Technologies</span></h3>
+          <ul class="job-desc">
+            <li>Built TrackOps (AeroWorld) frontend and Libree transportation web + React Native mobile apps.</li>
+            <li>UI/UX improvements, feature development, bug fixes, and technical documentation.</li>
+          </ul>
+          <ul class="tech-list">
+            <li>React</li><li>React Native</li><li>Spring Boot</li>
+          </ul>
+        </div>
+      </div>
+      <div class="job-item">
+        <div class="job-date">Aug — Nov 2024</div>
+        <div>
+          <h3 class="job-title">Software Engineering Intern · <span class="company">Bloomrix</span></h3>
+          <ul class="job-desc">
+            <li>Delivered full-stack features in React, Node.js, and PHP within Agile sprints (remote).</li>
+          </ul>
+          <ul class="tech-list">
+            <li>React</li><li>Node.js</li><li>PHP</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="featured">
+    <h2 class="section-heading"><span class="section-num">03.</span> Some Things I've Built</h2>
+    <div class="projects-grid">
+      <article class="project-card featured glow-card">
+        <div class="project-top">
+          <div class="project-folder">&lt;/&gt;</div>
+          <div class="project-links">
+            <span class="live-badge">LIVE</span>
+            <a href="https://aviationindex.co" target="_blank" rel="noopener noreferrer" aria-label="Live site">↗</a>
+          </div>
+        </div>
+        <h3 class="project-title">Aviation Index</h3>
+        <p class="project-desc">Production aviation data platform for industry professionals. Full-stack development with React, TypeScript, and NestJS.</p>
+        <ul class="tech-list"><li>React</li><li>TypeScript</li><li>NestJS</li><li>Production</li></ul>
+      </article>
+      <article class="project-card featured glow-card">
+        <div class="project-top">
+          <div class="project-folder">&lt;/&gt;</div>
+          <div class="project-links">
+            <span class="live-badge">LIVE</span>
+            <a href="https://aeroworld.trackops.io" target="_blank" rel="noopener noreferrer" aria-label="Live site">↗</a>
+          </div>
+        </div>
+        <h3 class="project-title">TrackOps</h3>
+        <p class="project-desc">Live aviation operations tracking platform used by aviation companies.</p>
+        <ul class="tech-list"><li>React JS</li><li>Spring Boot</li></ul>
+      </article>
+      <article class="project-card featured glow-card">
+        <div class="project-top">
+          <div class="project-folder">&lt;/&gt;</div>
+          <div class="project-links">
+            <span class="live-badge">LIVE</span>
+            <a href="https://play.google.com/store/apps/details?id=com.ebre.rider" target="_blank" rel="noopener noreferrer" aria-label="Google Play">↗</a>
+          </div>
+        </div>
+        <h3 class="project-title">Ebre Rider</h3>
+        <p class="project-desc">Published cross-platform mobile app on Google Play with real-time ride tracking.</p>
+        <ul class="tech-list"><li>React Native</li><li>Google Play</li><li>Mobile</li></ul>
+      </article>
+    </div>
+    <div class="btn-row">
+      <a class="btn btn-outline" href="/project">View all projects</a>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="research">
+    <h2 class="section-heading"><span class="section-num">04.</span> Research</h2>
+    <div class="research-grid">
+      <article class="research-card active">
+        <div class="research-meta">Universiti Malaya · MSCS</div>
+        <h3 class="research-title">Multi-Agent System for Cardiac MRI Analysis</h3>
+        <p class="research-date">2024 – Present</p>
+        <p class="research-text">Multi-agent pipeline for cardiac MRI analysis and HCM detection using 3D ResNet-18. RAG integration of clinical guidelines into diagnostic workflows; focus on explainable, trustworthy agentic AI.</p>
+        <ul class="tech-list"><li>Agentic AI</li><li>PyTorch</li><li>RAG</li><li>Multi-Agent</li></ul>
+      </article>
+      <article class="research-card">
+        <div class="research-meta">FAST-NUCES · Final Year</div>
+        <h3 class="research-title">Neurological Disease Identification via Deep Learning</h3>
+        <p class="research-date">May 2025</p>
+        <p class="research-text">CNN-based Alzheimer's SNP identification (75% accuracy). Phenotype Influence Score outperformed XGBoost and Random Forest.</p>
+        <ul class="tech-list"><li>CNN</li><li>Genomics</li><li>Python</li></ul>
+      </article>
+    </div>
+  </section>
+
+  <section class="section fade-up" id="contact">
+    <h2 class="section-heading"><span class="section-num">05.</span> Get In Touch</h2>
+    <div class="section-text">
+      <p>
+        I'm currently open to remote opportunities and interesting collaborations.
+        Whether you have a question or just want to say hi, my inbox is always open!
+      </p>
+      <div class="btn-row">
+        <a class="btn btn-outline" href="mailto:mtahirkhanyousufzai@gmail.com">Say Hello</a>
+      </div>
+      <div class="social-row" style="margin-top:24px;margin-bottom:0;">
+        <a class="social-icon" href="https://github.com/muhammad-tahir0312" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+        </a>
+        <a class="social-icon" href="https://www.linkedin.com/in/muhammad-tahir-0ab1291b2/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 114.126 0 2.063 2.063 0 01-2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+      </div>
+      <ul class="tech-list" style="margin-top:24px;">
+        <li><a href="mailto:mtahirkhanyousufzai@gmail.com">mtahirkhanyousufzai@gmail.com</a></li>
+        <li><a href="tel:+60193021463">+60 19-302 1463</a></li>
+        <li><a href="tel:+923079454287">+92 307 9454287</a></li>
+      </ul>
+    </div>
+  </section>
+</div>

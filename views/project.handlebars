@@ -1,207 +1,99 @@
-<style>
-  .projects-hero {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    margin-bottom: 24px;
-  }
-
-  .projects-hero h1 {
-    margin: 0;
-    font-size: 32px;
-    font-weight: 800;
-  }
-
-  .projects-hero p { margin: 0; color: var(--muted); }
-
-  .project-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-  }
-
-  .project-card {
-    display: grid;
-    grid-template-rows: 1fr auto;
-    background: linear-gradient(145deg, rgba(19, 47, 99, 0.9), rgba(16, 37, 81, 0.92));
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    overflow: hidden;
-    text-decoration: none;
-    color: var(--text);
-    box-shadow: var(--shadow);
-    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-  }
-
-  .project-card:hover {
-    transform: translateY(-4px);
-    border-color: rgba(124, 231, 255, 0.5);
-    box-shadow: 0 18px 32px rgba(0, 0, 0, 0.32);
-  }
-
-  .project-card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-  }
-
-  .project-body {
-    padding: 16px 16px 14px 16px;
-    display: grid;
-    gap: 10px;
-  }
-
-  .project-title {
-    margin: 0;
-    font-size: 18px;
-    font-weight: 800;
-  }
-
-  .project-desc {
-    margin: 0;
-    font-size: 14px;
-    color: var(--muted);
-    line-height: 1.5;
-  }
-
-  .tag-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-  }
-
-  .pill {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 7px 10px;
-    border-radius: 999px;
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid var(--border);
-    color: var(--muted);
-    font-weight: 700;
-    font-size: 12px;
-  }
-
-  .pill-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
-</style>
-
-<section class="page-shell">
-  <div class="projects-hero">
-    <h1>Projects</h1>
-    <p>A mix of production work, research builds, and systems experiments.</p>
+<div class="page-shell">
+  <div class="page-hero fade-up">
+    <p class="page-path"><span class="t-prompt">~</span><span class="t-path">/projects</span> <span class="page-path-cmd">ls --production</span></p>
+    <p class="hero-overline">Portfolio</p>
+    <h1><span class="section-num">02.</span> Some Things I've Built</h1>
+    <p>Production platforms shipped to real users, plus academic and personal work.</p>
   </div>
-  <div class="project-grid">
-    <a href="https://github.com/muhammad-tahir0312/Full_Stack_Restaurant_Online_Ordering_Application" target="_blank" class="project-card">
-      <img src="images/first.png" alt="Restaurant Food Ordering App">
-      <div class="project-body">
-        <div class="project-title">Restaurant Food Ordering App</div>
-        <p class="project-desc">Seamless ordering with social sign-in, secure payments, and fast browsing.</p>
-        <div class="tag-row">
-          <span class="pill"><span class="pill-dot"></span>Next.js</span>
-          <span class="pill"><span class="pill-dot"></span>TypeScript</span>
-          <span class="pill"><span class="pill-dot"></span>Stripe</span>
+
+  <section class="section fade-up" style="padding-top:0;">
+    <h2 class="section-heading"><span class="section-num">A.</span> Production Work</h2>
+    <div class="projects-grid">
+
+      <article class="project-card featured glow-card">
+        <div class="project-top">
+          <div class="project-folder">&lt;/&gt;</div>
+          <div class="project-links">
+            <span class="live-badge">LIVE</span>
+            <a href="https://aviationindex.co" target="_blank" rel="noopener noreferrer">↗</a>
+          </div>
         </div>
-      </div>
-    </a>
-    <a href="https://github.com/muhammad-tahir0312/TaskCraft-Pro" target="_blank" class="project-card">
-      <img src="images/second.png" alt="TaskCraft Pro">
-      <div class="project-body">
-        <div class="project-title">TaskCraft Pro</div>
-        <p class="project-desc">Web platform to organize and track tasks for teams.</p>
-        <div class="tag-row">
-          <span class="pill"><span class="pill-dot"></span>React</span>
-          <span class="pill"><span class="pill-dot"></span>Node</span>
-          <span class="pill"><span class="pill-dot"></span>MongoDB</span>
+        <h3 class="project-title">Aviation Index</h3>
+        <p class="project-desc">Subscription-based aviation intelligence platform for industry professionals. Full-stack with React, TypeScript, NestJS, and Postgres.</p>
+        <p class="project-role"><strong>Role:</strong> Full-stack — UI/UX, backend architecture, search, auth, Cypress testing</p>
+        <ul class="tech-list"><li>React</li><li>TypeScript</li><li>NestJS</li><li>Postgres</li><li>Cypress</li></ul>
+      </article>
+
+      <article class="project-card featured glow-card">
+        <div class="project-top">
+          <div class="project-folder">&lt;/&gt;</div>
+          <div class="project-links">
+            <span class="live-badge">LIVE</span>
+            <a href="https://aeroworld.trackops.io" target="_blank" rel="noopener noreferrer">↗</a>
+          </div>
         </div>
-      </div>
-    </a>
-    <a href="https://github.com/muhammad-tahir0312/COVID-19-PREDICTOR-VACCINATION-APPLICATION-using-DECISION-TREE" target="_blank" class="project-card">
-      <img src="images/third.png" alt="COVID-19 Predictor">
-      <div class="project-body">
-        <div class="project-title">COVID-19 Predictor</div>
-        <p class="project-desc">Vaccination center management and appointment scheduling.</p>
-        <div class="tag-row">
-          <span class="pill"><span class="pill-dot"></span>ML</span>
-          <span class="pill"><span class="pill-dot"></span>Python</span>
+        <h3 class="project-title">TrackOps</h3>
+        <p class="project-desc">Live aviation operations tracking platform (TrackOps). Frontend UI, backend APIs, and scalability for aviation companies.</p>
+        <p class="project-role"><strong>Role:</strong> React, React Native, Spring Boot — UI/UX, performance &amp; API integration</p>
+        <ul class="tech-list"><li>React JS</li><li>React Native</li><li>Spring Boot</li></ul>
+      </article>
+
+      <article class="project-card featured glow-card">
+        <div class="project-top">
+          <div class="project-folder">&lt;/&gt;</div>
+          <div class="project-links">
+            <span class="live-badge">LIVE</span>
+            <a href="https://play.google.com/store/apps/details?id=com.ebre.rider" target="_blank" rel="noopener noreferrer">↗</a>
+          </div>
         </div>
-      </div>
-    </a>
-    <a href="https://github.com/muhammad-tahir0312/Smart-Healthcare-System-using-Blockchain" target="_blank" class="project-card">
-      <img src="images/fourth.png" alt="Smart Healthcare System on Blockchain">
-      <div class="project-body">
-        <div class="project-title">Smart Healthcare System on Blockchain</div>
-        <p class="project-desc">Secure, unified health records with blockchain-backed access.</p>
-        <div class="tag-row">
-          <span class="pill"><span class="pill-dot"></span>Blockchain</span>
-          <span class="pill"><span class="pill-dot"></span>Security</span>
+        <h3 class="project-title">Ebre Rider</h3>
+        <p class="project-desc">Published cross-platform mobile app on Google Play. React Native with real-time ride tracking.</p>
+        <p class="project-role"><strong>Role:</strong> React Native development, published to Google Play Store</p>
+        <ul class="tech-list"><li>React Native</li><li>iOS</li><li>Android</li><li>Google Play</li></ul>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="section fade-up">
+    <h2 class="section-heading"><span class="section-num">B.</span> Academic &amp; Personal</h2>
+    <div class="proj-archive">
+      <a class="proj-archive-card" href="https://github.com/muhammad-tahir0312/Full_Stack_Restaurant_Online_Ordering_Application" target="_blank" rel="noopener noreferrer">
+        <img src="/images/first.png" alt="Restaurant App" loading="lazy">
+        <div class="proj-archive-body">
+          <div class="proj-label">Academic</div>
+          <h3 class="project-title">Restaurant Food Ordering App</h3>
+          <p class="project-desc">Next.js, TypeScript, Stripe payments, social sign-in.</p>
+          <ul class="tech-list"><li>Next.js</li><li>TypeScript</li><li>Stripe</li></ul>
         </div>
-      </div>
-    </a>
-    <a href="https://github.com/muhammad-tahir0312/4-Bit-Combinational-Lock-System" target="_blank" class="project-card">
-      <img src="images/fifth.jpg" alt="4 Bit Combinational Lock System">
-      <div class="project-body">
-        <div class="project-title">4 Bit Combinational Lock System</div>
-        <p class="project-desc">Gate-based combinational lock with alerts for incorrect codes.</p>
-        <div class="tag-row">
-          <span class="pill"><span class="pill-dot"></span>Digital Logic</span>
+      </a>
+      <a class="proj-archive-card" href="https://github.com/muhammad-tahir0312/TaskCraft-Pro" target="_blank" rel="noopener noreferrer">
+        <img src="/images/second.png" alt="TaskCraft Pro" loading="lazy">
+        <div class="proj-archive-body">
+          <div class="proj-label">Academic</div>
+          <h3 class="project-title">TaskCraft Pro</h3>
+          <p class="project-desc">Team task organization and tracking platform.</p>
+          <ul class="tech-list"><li>React</li><li>Node</li><li>MongoDB</li></ul>
         </div>
-      </div>
-    </a>
-    <a href="https://github.com/muhammad-tahir0312/Sorting-Program-in-Assembly-Language" target="_blank" class="project-card">
-      <img src="images/sixth.png" alt="Sorting Program in Assembly Language">
-      <div class="project-body">
-        <div class="project-title">Sorting Program in Assembly Language</div>
-        <p class="project-desc">String, char, and integer sorting with structured MASM code.</p>
-        <div class="tag-row">
-          <span class="pill"><span class="pill-dot"></span>Assembly</span>
-          <span class="pill"><span class="pill-dot"></span>MASM</span>
+      </a>
+      <a class="proj-archive-card" href="https://github.com/muhammad-tahir0312/COVID-19-PREDICTOR-VACCINATION-APPLICATION-using-DECISION-TREE" target="_blank" rel="noopener noreferrer">
+        <img src="/images/third.png" alt="COVID Predictor" loading="lazy">
+        <div class="proj-archive-body">
+          <div class="proj-label">Academic</div>
+          <h3 class="project-title">COVID-19 Predictor</h3>
+          <p class="project-desc">Vaccination center management and scheduling.</p>
+          <ul class="tech-list"><li>ML</li><li>Python</li></ul>
         </div>
-      </div>
-    </a>
-    <a href="https://github.com/muhammad-tahir0312/System-Call-for-Semaphore--Chain-Smoker-Problem" target="_blank" class="project-card">
-      <img src="images/seventh.png" alt="System Call for Semaphore - Chain Smoker Problem">
-      <div class="project-body">
-        <div class="project-title">System Call for Semaphore - Chain Smoker Problem</div>
-        <p class="project-desc">Semaphore-based synchronization demo for the chain smoker problem.</p>
-        <div class="tag-row">
-          <span class="pill"><span class="pill-dot"></span>C</span>
-          <span class="pill"><span class="pill-dot"></span>Pthreads</span>
+      </a>
+      <a class="proj-archive-card" href="https://github.com/muhammad-tahir0312/Smart-Healthcare-System-using-Blockchain" target="_blank" rel="noopener noreferrer">
+        <img src="/images/fourth.png" alt="Healthcare Blockchain" loading="lazy">
+        <div class="proj-archive-body">
+          <div class="proj-label">Academic</div>
+          <h3 class="project-title">Smart Healthcare on Blockchain</h3>
+          <p class="project-desc">Secure health records with blockchain access.</p>
+          <ul class="tech-list"><li>Blockchain</li><li>Security</li></ul>
         </div>
-      </div>
-    </a>
-    <a href="https://github.com/muhammad-tahir0312/Implementation-of-a-Parser-for-a-Simple-Context-Free-Grammar" target="_blank" class="project-card">
-      <img src="images/eight.png" alt="Simple Arithmetic Expression Parser">
-      <div class="project-body">
-        <div class="project-title">Simple Arithmetic Expression Parser</div>
-        <p class="project-desc">Recursive descent parser validating arithmetic expressions.</p>
-        <div class="tag-row">
-          <span class="pill"><span class="pill-dot"></span>C++</span>
-          <span class="pill"><span class="pill-dot"></span>Parsing</span>
-        </div>
-      </div>
-    </a>
-    <a href="https://github.com/muhammad-tahir0312/GEOMETRIC-ALGORITHMS-LINE-INTERSECTION-CONVEX-HULL-" target="_blank" class="project-card">
-      <img src="images/nine.png" alt="GEOMETRIC ALGORITHMS">
-      <div class="project-body">
-        <div class="project-title">Geometric Algorithms</div>
-        <p class="project-desc">Convex hull and line intersection comparisons with multiple algorithms.</p>
-        <div class="tag-row">
-          <span class="pill"><span class="pill-dot"></span>Algorithms</span>
-          <span class="pill"><span class="pill-dot"></span>Geometry</span>
-        </div>
-      </div>
-    </a>
-    <a href="https://github.com/muhammad-tahir0312/Efficient-Parallelization-of-Jarvis-March-and-Binary-Search-Tree-Algorithms-with-OpenMP-and-MPI" target="_blank" class="project-card">
-      <img src="images/ten.png" alt="Parallelization of Jarvis March and BST Algorithm with OpenMP and MPI">
-      <div class="project-body">
-        <div class="project-title">Parallel Jarvis March & BST</div>
-        <p class="project-desc">Parallelized geometry and data-structure routines with OpenMP and MPI.</p>
-        <div class="tag-row">
-          <span class="pill"><span class="pill-dot"></span>OpenMP</span>
-          <span class="pill"><span class="pill-dot"></span>MPI</span>
-        </div>
-      </div>
-    </a>
-  </div>
-</section>
+      </a>
+    </div>
+  </section>
+</div>
