@@ -73,6 +73,17 @@
     if (!a.getAttribute('rel')) a.setAttribute('rel', 'noopener noreferrer');
   });
 
+  /* About photo fallback when image file is missing */
+  document.querySelectorAll('.about-photo img').forEach(function (img) {
+    function showFallback() {
+      img.classList.add('hidden');
+      var fb = img.parentElement && img.parentElement.querySelector('.about-photo-fallback');
+      if (fb) fb.classList.add('visible');
+    }
+    img.addEventListener('error', showFallback);
+    if (img.complete && img.naturalWidth === 0) showFallback();
+  });
+
   /* Scroll fade-in with stagger */
   var fadeEls = document.querySelectorAll('.fade-up');
   if (fadeEls.length && 'IntersectionObserver' in window) {

@@ -15,7 +15,7 @@ app.use("/images", express.static(path.join(__dirname, "/public/images")));
 app.use("/css", express.static(path.join(__dirname, "/public/css")));
 app.use("/js", express.static(path.join(__dirname, "/public/js")));
 
-const siteUrl = 'https://my-portfolio-cman.onrender.com';
+const siteUrl = process.env.SITE_URL || 'https://mtahir.me';
 const defaultDescription =
     'Software Engineer & AI/ML Researcher — MSCS @ Universiti Malaya. Agentic AI, healthcare research, and production full-stack apps. Open to remote worldwide.';
 
